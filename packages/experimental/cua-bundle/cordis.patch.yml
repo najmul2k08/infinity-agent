@@ -1,0 +1,10 @@
+- insert:
+    - id: cua-provider-registry
+      name: '@infinity-agent/computer-use'
+    - id: cua
+      name: '@infinity-agent/experimental-cua-macos'
+      disabled: !!js process.platform !== 'darwin'
+      config:
+        agentPreset: ptc
+    - id: ui-cua
+      name: '@infinity-agent/cua'

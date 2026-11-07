@@ -1,0 +1,77 @@
+{
+  "name": "@infinity-agent/plan-mode",
+  "description": "Logged per-agent plan mode with deployment guidance, a direct slash command, and a user-reviewed exit",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/plan/plan-mode"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./client": {
+      "types": "./lib/types/client.d.ts",
+      "default": "./lib/types/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/commands": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/system-prompt": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/user-questions": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "peerDependenciesMeta": {
+    "@infinity-agent/commands": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@infinity-agent/brand": "workspace:*",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-loop": "workspace:*",
+    "@infinity-agent/ptc-runtime": "workspace:*",
+    "@infinity-agent/commands": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/system-prompt": "workspace:*",
+    "@infinity-agent/tool-executor-native": "workspace:*",
+    "@infinity-agent/tool-executor-ptc": "workspace:*",
+    "@infinity-agent/tool-testkit": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/user-questions": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/agent-loop-testkit": "workspace:*"
+  }
+}

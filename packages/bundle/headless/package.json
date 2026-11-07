@@ -1,0 +1,92 @@
+{
+  "name": "@infinity-agent/headless",
+  "description": "The dsh one-shot bundle: a direct core Agent/Session runner over dsh-base with no Host, HTTP, or browser layer",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/bundle/headless"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./startup": {
+      "types": "./lib/types/startup.d.ts",
+      "default": "./lib/startup.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./src/*": "./src/*",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/startup.js",
+    "cordis.patch.yml",
+    "lib/json-stream-*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@infinity-agent/brand": "workspace:*",
+    "@infinity-agent/cmdline": "workspace:*",
+    "@infinity-agent/util-values": "workspace:*",
+    "@infinity-agent/schemastery": "workspace:~",
+    "commander": "^15.0.0"
+  },
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-default-model": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-query": "workspace:*",
+    "@infinity-agent/fs": "workspace:*",
+    "@infinity-agent/permission-presets": "workspace:*",
+    "@infinity-agent/sandbox-policy": "workspace:*",
+    "@infinity-agent/subagent": "workspace:*",
+    "@infinity-agent/user-approval": "workspace:*"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-default-model": "workspace:*",
+    "@infinity-agent/agent-loop": "workspace:*",
+    "@infinity-agent/agent-loop-testkit": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-query": "workspace:*",
+    "@infinity-agent/fs": "workspace:*",
+    "@infinity-agent/permission-presets": "workspace:*",
+    "@infinity-agent/sandbox-policy": "workspace:*",
+    "@infinity-agent/subagent": "workspace:*",
+    "@infinity-agent/user-approval": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@infinity-agent/permission-presets": {
+      "optional": true
+    },
+    "@infinity-agent/sandbox-policy": {
+      "optional": true
+    },
+    "@infinity-agent/subagent": {
+      "optional": true
+    }
+  }
+}

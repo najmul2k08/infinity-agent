@@ -1,0 +1,89 @@
+{
+  "name": "@infinity-agent/experimental-auto-review",
+  "description": "Per-tool LLM authorization review for the Infinity agent Auto permission preset",
+  "version": "0.2.2-rc.1",
+  "icon": "./icon.svg",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/experimental/auto-review"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "icon.svg",
+    "locale/*.json",
+    "docs",
+    "lib/index.js",
+    "cordis.patch.yml",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-instructions": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/permission-presets": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/working-directory": "workspace:*"
+  },
+  "dependencies": {
+    "@infinity-agent/util-values": "workspace:*"
+  },
+  "devDependencies": {
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-instructions": "workspace:*",
+    "@infinity-agent/agent-loop": "workspace:*",
+    "@infinity-agent/agent-loop-testkit": "workspace:*",
+    "@infinity-agent/bash-sandbox": "workspace:*",
+    "@infinity-agent/compaction": "workspace:*",
+    "@infinity-agent/fs-local": "workspace:*",
+    "@infinity-agent/fs-observation-policy": "workspace:*",
+    "@infinity-agent/fs-sandbox": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/llm-deepseek": "workspace:*",
+    "@infinity-agent/llm-deepseek-api-key": "workspace:*",
+    "@infinity-agent/permission-presets": "workspace:*",
+    "@infinity-agent/ptc-runtime-node": "workspace:*",
+    "@infinity-agent/sandbox": "workspace:*",
+    "@infinity-agent/sandbox-policy": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/shell": "workspace:*",
+    "@infinity-agent/shell-env": "workspace:*",
+    "@infinity-agent/subagent": "workspace:*",
+    "@infinity-agent/subprocess-local": "workspace:*",
+    "@infinity-agent/system-prompt": "workspace:*",
+    "@infinity-agent/tool-bash": "workspace:*",
+    "@infinity-agent/tool-executor-native": "workspace:*",
+    "@infinity-agent/tool-executor-ptc": "workspace:*",
+    "@infinity-agent/tool-fs": "workspace:*",
+    "@infinity-agent/tool-subagent": "workspace:*",
+    "@infinity-agent/tool-testkit": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/user-approval": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/working-directory": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

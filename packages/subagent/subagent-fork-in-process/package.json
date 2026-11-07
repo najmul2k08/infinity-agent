@@ -1,0 +1,52 @@
+{
+  "name": "@infinity-agent/subagent-fork-in-process",
+  "description": "In-process fork subagent backend: runs a child agent seeded with a prefix of the parent's log",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/subagent/subagent-fork-in-process"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/subagent": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "dependencies": {
+    "@infinity-agent/schemastery": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-loop": "workspace:*",
+    "@infinity-agent/agent-loop-testkit": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/subagent": "workspace:*",
+    "@infinity-agent/subagent-spawn-in-process": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/session-projection": "workspace:*"
+  }
+}

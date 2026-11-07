@@ -1,0 +1,10 @@
+- insert:
+    - id: experimental-inspector
+      name: '@infinity-agent/experimental-inspector'
+      disabled: false
+      config:
+        captureFetch: true
+    - id: session-inspector
+      name: '@infinity-agent/experimental-session-inspector'
+    - id: client-ui-stats
+      name: '@infinity-agent/experimental-client-ui-stats'

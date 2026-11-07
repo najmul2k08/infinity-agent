@@ -1,0 +1,72 @@
+{
+  "name": "@infinity-agent/experimental-browser-use-stagehand-native",
+  "description": "Experimental Stagehand browser tools with separately configured native models",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/experimental/browser-use-stagehand-native"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json",
+    "./worker": {
+      "types": "./lib/types/worker.d.ts",
+      "default": "./lib/worker.js"
+    }
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/worker.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/browser-use": "workspace:*",
+    "@infinity-agent/system-prompt": "workspace:*",
+    "@infinity-agent/tools": "workspace:*"
+  },
+  "dependencies": {
+    "@browserbasehq/stagehand": "4.1.0",
+    "@infinity-agent/experimental-browser-use-runtime": "workspace:*",
+    "@infinity-agent/mcp-client": "workspace:*",
+    "@infinity-agent/util-values": "workspace:*",
+    "@infinity-agent/schemastery": "workspace:~",
+    "zod": "4.4.3",
+    "@infinity-agent/subprocess": "workspace:*",
+    "@puppeteer/browsers": "3.2.2"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/cordis-plugin-include": "workspace:~",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-loop": "workspace:*",
+    "@infinity-agent/agent-loop-testkit": "workspace:*",
+    "@infinity-agent/attachment": "workspace:*",
+    "@infinity-agent/attachment-local": "workspace:*",
+    "@infinity-agent/browser-use": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/system-prompt": "workspace:*",
+    "@infinity-agent/tool-executor-native": "workspace:*",
+    "@infinity-agent/tool-testkit": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "tsx": "^4.23.13"
+  }
+}

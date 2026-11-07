@@ -1,0 +1,25 @@
+- name: '@infinity-agent/llm'
+- name: '@infinity-agent/session'
+- name: '@infinity-agent/session-projection'
+- name: '@infinity-agent/system-prompt'
+- name: '@infinity-agent/tools'
+- name: '@infinity-agent/tool-executor-native'
+- name: '@infinity-agent/agent'
+- name: '@infinity-agent/agent-loop'
+  config:
+    agents: []
+- name: '@infinity-agent/credentials-local'
+  config:
+    path: {{credentials}}
+    watch: false
+- name: '@infinity-agent/llm-deepseek-api-key'
+  config:
+    apiKeyEnv: DEEPSEEK_API_KEY
+    baseURL: {{endpoint}}
+    thinking: enabled
+    reasoningEffort: high
+    maxTokens: 256000
+    streamIdleTimeoutMs: 300000
+- name: '@infinity-agent/llm-deepseek-account'
+  config:
+    baseURL: {{endpoint}}

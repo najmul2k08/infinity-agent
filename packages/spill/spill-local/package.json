@@ -1,0 +1,47 @@
+{
+  "name": "@infinity-agent/spill-local",
+  "description": "Local-filesystem implementation of the Infinity agent spill storage seam (private session-scoped files)",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/spill/spill-local"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/spill": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "dependencies": {
+    "@infinity-agent/schemastery": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis-plugin-include": "workspace:~",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/brand": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/spill": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "name": "@infinity-agent/tool-fs",
+  "description": "Model-facing filesystem tools (read, write, edit) over the Infinity agent filesystem seam (ctx.fs)",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/fs/tool-fs"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "diff": "^9.0.0",
+    "@infinity-agent/schemastery": "workspace:~",
+    "@infinity-agent/util-code-language": "workspace:*",
+    "@infinity-agent/fs-patch": "workspace:*",
+    "@infinity-agent/util-values": "workspace:*"
+  },
+  "peerDependencies": {
+    "@infinity-agent/attachment": "workspace:*",
+    "@infinity-agent/fs": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/sandbox": "workspace:*",
+    "@infinity-agent/sandbox-policy": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/system-prompt": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/user-approval": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/working-directory": "workspace:*"
+  },
+  "devDependencies": {
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-loop": "workspace:*",
+    "@infinity-agent/agent-loop-testkit": "workspace:*",
+    "@infinity-agent/attachment": "workspace:*",
+    "@infinity-agent/fs": "workspace:*",
+    "@infinity-agent/fs-local": "workspace:*",
+    "@infinity-agent/fs-observation-policy": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/llm-deepseek": "workspace:*",
+    "@infinity-agent/llm-deepseek-api-key": "workspace:*",
+    "@infinity-agent/sandbox": "workspace:*",
+    "@infinity-agent/sandbox-policy": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/system-prompt": "workspace:*",
+    "@infinity-agent/tool-executor-native": "workspace:*",
+    "@infinity-agent/tool-executor-ptc": "workspace:*",
+    "@infinity-agent/tool-testkit": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/user-approval": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/scope": "workspace:*",
+    "@infinity-agent/ptc-runtime": "workspace:*",
+    "@infinity-agent/fs-sandbox": "workspace:*",
+    "@infinity-agent/working-directory": "workspace:*"
+  }
+}

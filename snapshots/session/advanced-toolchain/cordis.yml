@@ -1,0 +1,41 @@
+# Native inspection, scoped PTC, then native subagents and workflow.
+- id: agent-default-model
+  name: '@infinity-agent/agent-default-model'
+  config:
+    provider: deepseek-official
+    model: deepseek-v4-pro
+
+- id: session-persistence-jsonl
+  name: '@infinity-agent/session-persistence-jsonl'
+  config:
+    root: !!js dshHomePath('sessions')
+    compression: !!js 'process.env.INFINITY_SNAPSHOT === undefined ? ''zstd'' : ''none'''
+
+- id: agent-instructions
+  name: '@infinity-agent/agent-instructions'
+  config:
+    maxBytes: 65536
+
+- id: tool-executor-native
+  disabled: false
+
+- id: tool-executor-ptc
+  disabled: true
+
+- id: system-prompt
+  name: '@infinity-agent/system-prompt'
+  config:
+    personaPrefix: |
+      You are a coding assistant powered by the {{model}} model.
+
+      Verify your work by running the code or tests. Keep answers brief and factual.
+
+- insert:
+    - id: cordis-host-runner
+      name: '@infinity-agent/cordis-host-runner'
+    - id: cordis-inspect-providers
+      name: '@infinity-agent/tool-cordis/host'
+    - id: tool-cordis
+      name: '@infinity-agent/tool-cordis'
+    - id: advanced-toolchain-presentation
+      name: './presentation.mjs'

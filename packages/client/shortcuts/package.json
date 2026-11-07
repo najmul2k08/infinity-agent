@@ -1,0 +1,70 @@
+{
+  "name": "@infinity-agent/client-shortcuts",
+  "description": "Application keyboard command registry and physical-key routing",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/client/shortcuts"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./protocol": {
+      "types": "./lib/types/protocol.d.ts",
+      "default": "./lib/protocol.js"
+    },
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@infinity-agent/client-locale"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/client-locale": "workspace:*",
+    "@infinity-agent/client-store": "workspace:*",
+    "@infinity-agent/client-ui-primitives": "workspace:*",
+    "@infinity-agent/brand": "workspace:*",
+    "@infinity-agent/client-test-runtime": "workspace:*",
+    "@infinity-agent/host-webserver": "workspace:*"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/protocol.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "dependencies": {
+    "@infinity-agent/util-crypto": "workspace:*",
+    "@infinity-agent/util-values": "workspace:*",
+    "@infinity-agent/schemastery": "workspace:~"
+  }
+}

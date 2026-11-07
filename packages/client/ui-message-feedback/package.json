@@ -1,0 +1,78 @@
+{
+  "name": "@infinity-agent/client-ui-message-feedback",
+  "description": "The Web feedback surface: per-message Like/Dislike in the assistant-message action strip and the feedback dialog behind both ratings and /feedback, backed by the messageFeedback and sessionFeedback Host Remotes",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/client/ui-message-feedback"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@infinity-agent/api-remotes",
+        "@infinity-agent/client-locale",
+        "@infinity-agent/client-ui-conversation",
+        "@infinity-agent/client-ui-renderer",
+        "@infinity-agent/client-ui-commands"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/api-remotes": "workspace:*",
+    "@infinity-agent/client-connection": "workspace:*",
+    "@infinity-agent/client-locale": "workspace:*",
+    "@infinity-agent/client-test-runtime": "workspace:*",
+    "@infinity-agent/client-ui-conversation": "workspace:*",
+    "@infinity-agent/client-ui-primitives": "workspace:*",
+    "@infinity-agent/client-ui-renderer": "workspace:*",
+    "@infinity-agent/client-ui-slots": "workspace:*",
+    "@infinity-agent/message-feedback": "workspace:*",
+    "@infinity-agent/remote-mock": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/typert-protocol": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@testing-library/react": "^16.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@infinity-agent/client-ui-chat": "workspace:*",
+    "@infinity-agent/client-ui-session": "workspace:*",
+    "@infinity-agent/client-ui-commands": "workspace:*",
+    "@infinity-agent/command-feedback": "workspace:*",
+    "@infinity-agent/client-store": "workspace:*"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "name": "@infinity-agent/client-ui-shortcuts",
+  "description": "Keyboard shortcut reference, recording, and local preference editing",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/client/ui-shortcuts"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@infinity-agent/client-shortcuts",
+        "@infinity-agent/client-locale",
+        "@infinity-agent/client-ui-layout",
+        "@infinity-agent/client-ui-settings"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/client-shortcuts": "workspace:*",
+    "@infinity-agent/client-locale": "workspace:*",
+    "@infinity-agent/client-store": "workspace:*",
+    "@infinity-agent/client-ui-slots": "workspace:*",
+    "@infinity-agent/client-ui-primitives": "workspace:*",
+    "@infinity-agent/client-ui-renderer": "workspace:*",
+    "@infinity-agent/client-ui-layout": "workspace:*",
+    "@infinity-agent/client-ui-settings": "workspace:*",
+    "@infinity-agent/brand": "workspace:*",
+    "clsx": "^2.1.1",
+    "react": "^18.2.0",
+    "@infinity-agent/client-test-runtime": "workspace:*"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ]
+}

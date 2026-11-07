@@ -1,0 +1,27 @@
+- insert:
+    - id: preset-delegate-a
+      name: '@infinity-agent/agent-preset'
+      config:
+        id: delegate-a
+        plugins:
+          - name: '@infinity-agent/tool-subagent'
+            config:
+              provider: spawn
+              allowedAgentPresets: [standard, ptc, minimal]
+          - name: '@infinity-agent/tool-subagent'
+            config:
+              provider: fork
+              toolName: subagent_fork
+    - id: preset-delegate-b
+      name: '@infinity-agent/agent-preset'
+      config:
+        id: delegate-b
+        plugins:
+          - name: '@infinity-agent/tool-subagent'
+            config:
+              provider: spawn
+              allowedAgentPresets: [standard, ptc, minimal]
+          - name: '@infinity-agent/tool-subagent'
+            config:
+              provider: fork
+              toolName: subagent_fork

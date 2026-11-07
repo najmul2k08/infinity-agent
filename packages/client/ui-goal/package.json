@@ -1,0 +1,77 @@
+{
+  "name": "@infinity-agent/client-ui-goal",
+  "description": "Session goal surface: GoalBar docked above the composer, read from the goal session projection",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/client/ui-goal"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@infinity-agent/api-remotes",
+        "@infinity-agent/api-session-controller",
+        "@infinity-agent/client-locale",
+        "@infinity-agent/client-ui-chat",
+        "@infinity-agent/client-ui-conversation",
+        "@infinity-agent/client-ui-renderer",
+        "@infinity-agent/client-ui-session"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/api-remotes": "workspace:*",
+    "@infinity-agent/api-session-controller": "workspace:*",
+    "@infinity-agent/client-locale": "workspace:*",
+    "@infinity-agent/client-test-runtime": "workspace:*",
+    "@infinity-agent/client-ui-chat": "workspace:*",
+    "@infinity-agent/client-ui-conversation": "workspace:*",
+    "@infinity-agent/client-ui-primitives": "workspace:*",
+    "@infinity-agent/client-ui-slots": "workspace:*",
+    "@infinity-agent/client-ui-renderer": "workspace:*",
+    "@infinity-agent/client-ui-session": "workspace:*",
+    "@infinity-agent/commands": "workspace:*",
+    "@infinity-agent/goal": "workspace:*",
+    "@testing-library/react": "^16.3.3",
+    "@infinity-agent/cordis": "workspace:~",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/typert-protocol": "workspace:*"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ]
+}

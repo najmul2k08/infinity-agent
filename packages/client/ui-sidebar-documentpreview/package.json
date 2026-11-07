@@ -1,0 +1,104 @@
+{
+  "name": "@infinity-agent/client-ui-sidebar-documentpreview",
+  "description": "Extensible Sidebar previews for Office documents, spreadsheets, Markdown, code, images, PDF, HTML, and plain text",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/client/ui-sidebar-documentpreview"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@infinity-agent/api-gateway",
+        "@infinity-agent/api-workspace-files",
+        "@infinity-agent/client-resources",
+        "@infinity-agent/client-ui-sidebar-right",
+        "@infinity-agent/client-ui-session",
+        "@infinity-agent/api-remotes",
+        "@infinity-agent/client-locale",
+        "@infinity-agent/client-ui-settings",
+        "@infinity-agent/client-ui-file-drag",
+        "@infinity-agent/client-ui-context-menu"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/api-gateway": "workspace:*",
+    "@infinity-agent/api-remotes": "workspace:*",
+    "@infinity-agent/api-workspace-files": "workspace:*",
+    "@infinity-agent/client-connection": "workspace:*",
+    "@infinity-agent/client-locale": "workspace:*",
+    "@infinity-agent/client-resources": "workspace:*",
+    "@infinity-agent/client-store": "workspace:*",
+    "@infinity-agent/client-test-runtime": "workspace:*",
+    "@infinity-agent/client-ui-dockkit": "workspace:*",
+    "@infinity-agent/client-ui-primitives": "workspace:*",
+    "@infinity-agent/client-ui-renderer": "workspace:*",
+    "@infinity-agent/client-ui-session": "workspace:*",
+    "@infinity-agent/client-ui-settings": "workspace:*",
+    "@infinity-agent/client-ui-sidebar-files": "workspace:*",
+    "@infinity-agent/client-ui-sidebar-right": "workspace:*",
+    "@infinity-agent/client-ui-slots": "workspace:*",
+    "@infinity-agent/office-to-pdf": "workspace:*",
+    "@infinity-agent/host-webserver": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/util-workspace-path": "workspace:*",
+    "@fortune-sheet/core": "1.0.4",
+    "@fortune-sheet/react": "1.0.4",
+    "@testing-library/react": "^16.3.3",
+    "@types/papaparse": "^5.3.16",
+    "clsx": "^2.0.0",
+    "dompurify": "^3.4.16",
+    "exceljs": "4.4.0",
+    "fast-xml-parser": "5.11.1",
+    "fflate": "^0.8.3",
+    "papaparse": "5.7.0",
+    "pdfjs-dist": "6.3.289",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
+    "yaml": "^2.9.0",
+    "@infinity-agent/client-ui-file-drag": "workspace:*",
+    "@infinity-agent/client-ui-context-menu": "workspace:*"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/client.*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "dependencies": {
+    "@infinity-agent/schemastery": "workspace:~"
+  }
+}

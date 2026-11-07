@@ -1,0 +1,65 @@
+# TypeScript SDK snapshot patch for automatic DSH SDK failure notices.
+
+- id: skill-filesystem
+  name: '@infinity-agent/skill-filesystem'
+  config:
+    includeDefaultRoots: false
+
+- id: llm-deepseek
+  name: '@infinity-agent/llm-deepseek-api-key'
+  config:
+    thinking: enabled
+    reasoningEffort: max
+
+- id: session-persistence-jsonl
+  name: '@infinity-agent/session-persistence-jsonl'
+  config:
+    root: !!js dshHomePath('sessions')
+    compression: !!js "process.env.INFINITY_SNAPSHOT === undefined ? 'zstd' : 'none'"
+
+- id: session-log-deepseek
+  name: '@infinity-agent/session-log-deepseek'
+  config:
+    enabled: true
+
+- insert:
+    - id: subagent-dsh-sdk-diagnostic
+      name: '@infinity-agent/subagent-dsh-sdk'
+      config:
+        providerName: dsh-sdk-diagnostic
+        profile: sdk
+        patches:
+          - !!js process.env.INFINITY_TEST_CHILD_PATCH
+        dshHome: !!js dshHomePath('children/first')
+        provider: mock
+        model: mock-echo
+        env:
+          INFINITY_TELEMETRY_DISABLED: '1'
+          INFINITY_TEST_CHILD_FAILURE: '1'
+    - id: tool-subagent-dsh-sdk-diagnostic
+      name: '@infinity-agent/tool-subagent'
+      config:
+        provider: dsh-sdk-diagnostic
+        toolName: subagent_dsh_sdk
+        maxDepth: provider-managed
+    - id: subagent-dsh-sdk-diagnostic-second
+      name: '@infinity-agent/subagent-dsh-sdk'
+      config:
+        providerName: dsh-sdk-diagnostic-second
+        profile: sdk
+        patches:
+          - !!js process.env.INFINITY_TEST_CHILD_PATCH
+        dshHome: !!js dshHomePath('children/second')
+        provider: mock
+        model: mock-echo
+        env:
+          INFINITY_TELEMETRY_DISABLED: '1'
+          INFINITY_TEST_CHILD_FAILURE: '1'
+    - id: tool-subagent-dsh-sdk-diagnostic-second
+      name: '@infinity-agent/tool-subagent'
+      config:
+        provider: dsh-sdk-diagnostic-second
+        toolName: subagent_dsh_sdk_second
+        maxDepth: provider-managed
+    - id: await-external-subagents
+      name: '../../../packages/test-support/session-snapshot/tests/fixtures/subagent-settlement-barrier.ts'

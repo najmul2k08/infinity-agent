@@ -1,0 +1,44 @@
+{
+  "name": "@infinity-agent/desktop-host",
+  "description": "Private Node-mode host process for the Electron desktop application",
+  "version": "0.2.2-rc.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib/index.js",
+    "lib/cli.js"
+  ],
+  "dependencies": {
+    "koffi": "3.1.1",
+    "@deepseek-ai/libreoffice-kit": "^0.1.5",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/cli": "workspace:*",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/app-boot": "workspace:*",
+    "@infinity-agent/client-connection": "workspace:*",
+    "@infinity-agent/host-webserver": "workspace:*",
+    "@infinity-agent/home-paths": "workspace:*",
+    "@infinity-agent/jobs": "workspace:*",
+    "@infinity-agent/schedule": "workspace:*",
+    "@infinity-agent/tool-workspace-dependencies": "workspace:*",
+    "@infinity-agent/skill-office": "workspace:*",
+    "@infinity-agent/deepseek-account": "workspace:*",
+    "@infinity-agent/workspace": "workspace:*",
+    "@infinity-agent/plugin-manager": "workspace:*"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/cordis-plugin-include": "workspace:~",
+    "@infinity-agent/skill": "workspace:*",
+    "@infinity-agent/fs": "workspace:*",
+    "@infinity-agent/fs-local": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-persistence": "workspace:*",
+    "@infinity-agent/sandbox-policy": "workspace:*",
+    "@infinity-agent/util-workspace-path": "workspace:*",
+    "@infinity-agent/brand": "workspace:*",
+    "@infinity-agent/tool-executor-native": "workspace:*"
+  }
+}

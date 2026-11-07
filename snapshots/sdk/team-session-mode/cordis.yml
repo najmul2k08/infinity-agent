@@ -1,0 +1,35 @@
+# TypeScript SDK snapshot-record patch over `infinity --profile sdk`.
+
+# The fixture corpus must not depend on the developer's personal skill roots.
+# Ordinary product launches retain the sdk profile's default skill discovery.
+- id: skill-filesystem
+  name: '@infinity-agent/skill-filesystem'
+  config:
+    includeDefaultRoots: false
+
+- id: llm-deepseek
+  name: '@infinity-agent/llm-deepseek-api-key'
+  config:
+    thinking: enabled
+    reasoningEffort: max
+
+- id: session-persistence-jsonl
+  name: '@infinity-agent/session-persistence-jsonl'
+  config:
+    root: !!js dshHomePath('sessions')
+    compression: !!js "process.env.INFINITY_SNAPSHOT === undefined ? 'zstd' : 'none'"
+
+- id: tool-subagent
+  name: '@infinity-agent/tool-subagent'
+  config:
+    provider: spawn
+    toolName: subagent
+    maxDepth: 1
+
+- insert:
+    - id: agent-team
+      name: '@infinity-agent/agent-team'
+    - id: tool-agent-team
+      name: '@infinity-agent/tool-agent-team'
+    - id: team-session-mode-fixture
+      name: ../../../packages/team/agent-team/tests/session-mode-fixture.ts

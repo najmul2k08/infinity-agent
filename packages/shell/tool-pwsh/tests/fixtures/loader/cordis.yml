@@ -1,0 +1,39 @@
+# Minimal tool-pwsh composition: real app boot path, real pwsh executor, real
+# foreground + background tool calls; driven by the package's loader.spec.ts.
+- id: system-prompt
+  name: '@infinity-agent/system-prompt'
+
+- id: fs
+  name: '@infinity-agent/fs-local'
+
+- id: session-projections
+  name: '@infinity-agent/session-projection'
+
+- id: working-directory
+  name: '@infinity-agent/working-directory'
+
+- id: tools
+  name: '@infinity-agent/tools'
+
+- id: tool-executor-native
+  name: '@infinity-agent/tool-executor-native'
+
+- id: subprocess
+  name: '@infinity-agent/subprocess-local'
+
+- id: bash
+  name: '@infinity-agent/pwsh-local'
+  config:
+    graceMs: 200
+
+- id: shell-env
+  name: '@infinity-agent/shell-env'
+
+- id: tasks
+  name: '@infinity-agent/jobs-local'
+
+- id: tool-jobs
+  name: '@infinity-agent/tool-jobs'
+
+- id: tool-pwsh
+  name: '@infinity-agent/tool-pwsh'

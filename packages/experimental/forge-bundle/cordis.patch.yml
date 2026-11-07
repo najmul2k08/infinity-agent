@@ -1,0 +1,21 @@
+- insert:
+    - id: worktree
+      name: '@infinity-agent/experimental-worktree'
+    - id: tool-worktree
+      name: '@infinity-agent/experimental-tool-worktree'
+    - id: forge
+      name: '@infinity-agent/experimental-forge'
+    - id: forge-github
+      name: '@infinity-agent/experimental-forge-github'
+    - id: forge-session
+      name: '@infinity-agent/experimental-forge-session'
+    - id: optional-forge-panel
+      name: cordis:group
+      group: true
+      isolate:
+        worktrees: true
+      config:
+        - id: forge-worktree
+          name: '@infinity-agent/experimental-worktree'
+        - id: forge-panel
+          name: '@infinity-agent/experimental-client-ui-forge'

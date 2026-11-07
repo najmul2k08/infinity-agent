@@ -1,0 +1,92 @@
+# Keyless replay for padded persistent PowerShell completion frames.
+- id: llm-deepseek
+  name: '@infinity-agent/llm-deepseek-api-key'
+  disabled: true
+
+- insert:
+    - id: llm-replay
+      name: '@infinity-agent/llm-replay'
+      config:
+        providers:
+          - id: deepseek-official
+            name: DeepSeek
+            models:
+              - id: deepseek-v4-pro
+
+- insert:
+    - id: terminal
+      name: '@infinity-agent/terminal'
+
+- id: sandbox-policy
+  name: '@infinity-agent/sandbox-policy'
+  config:
+    mode: danger-full-access
+    workspaceRoot: !!js process.cwd()
+
+- id: subprocess
+  name: '@infinity-agent/subprocess-local'
+
+- insert:
+    - id: padded-pwsh-backend
+      name: './pwsh-snapshot-backend.mjs'
+
+- id: agent-default-model
+  name: '@infinity-agent/agent-default-model'
+  config:
+    provider: deepseek-official
+    model: deepseek-v4-pro
+
+- id: session-persistence-jsonl
+  name: '@infinity-agent/session-persistence-jsonl'
+  config:
+    root: !!js dshHomePath('sessions')
+    compression: none
+
+- id: agent-instructions
+  name: '@infinity-agent/agent-instructions'
+  disabled: true
+
+- id: system-prompt
+  name: '@infinity-agent/system-prompt'
+  config:
+    personaPrefix: You are a concise snapshot agent.
+
+- id: tool-jobs
+  name: '@infinity-agent/tool-jobs'
+  disabled: true
+
+- id: goal
+  name: '@infinity-agent/goal'
+  disabled: true
+
+- id: goal-round-driver
+  name: '@infinity-agent/goal-round-driver'
+  disabled: true
+
+- id: command-goal
+  name: '@infinity-agent/command-goal'
+  disabled: true
+
+- id: tool-goal
+  name: '@infinity-agent/tool-goal'
+  disabled: true
+
+- id: skill
+  name: '@infinity-agent/skill'
+  disabled: true
+
+- id: skill-filesystem
+  name: '@infinity-agent/skill-filesystem'
+  disabled: true
+
+- id: tool-skill
+  name: '@infinity-agent/tool-skill'
+  disabled: true
+
+- id: tool-bash
+  name: '@infinity-agent/tool-bash'
+  disabled: true
+
+- insert:
+    - id: tool-pwsh-persistent
+      name: '@infinity-agent/tool-pwsh-persistent'

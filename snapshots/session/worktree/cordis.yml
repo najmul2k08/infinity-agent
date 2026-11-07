@@ -1,0 +1,5 @@
+- insert:
+    - id: worktree
+      name: '@infinity-agent/experimental-worktree'
+    - id: tool-worktree
+      name: '@infinity-agent/experimental-tool-worktree'

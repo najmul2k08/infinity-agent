@@ -1,0 +1,12 @@
+.text {
+  display: block;
+  min-width: 0;
+  overflow-x: auto;
+  white-space: var(--dsl-command-whitespace, pre);
+  overflow-wrap: anywhere;
+}
+
+.text:focus-visible {
+  outline: var(--ia-focus-ring-width) solid var(--ia-focus-ring-color, var(--ia-alias-state-business-primary));
+  outline-offset: -2px;
+}

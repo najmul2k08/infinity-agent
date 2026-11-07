@@ -1,0 +1,107 @@
+{
+  "name": "@infinity-agent/api-remotes",
+  "description": "Remote BFF assembly for application-selected Host capabilities",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/api/remotes"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@infinity-agent/api-gateway"
+      ],
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "dependencies": {
+    "@infinity-agent/deque": "workspace:*",
+    "@infinity-agent/util-values": "workspace:*"
+  },
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/scope": "workspace:*"
+  },
+  "devDependencies": {
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-preset-registry": "workspace:*",
+    "@infinity-agent/api-gateway": "workspace:*",
+    "@infinity-agent/api-job-controller": "workspace:*",
+    "@infinity-agent/api-session-controller": "workspace:*",
+    "@infinity-agent/api-settings-controller": "workspace:*",
+    "@infinity-agent/api-workspace-controller": "workspace:*",
+    "@infinity-agent/api-workspace-files": "workspace:*",
+    "@infinity-agent/client-connection": "workspace:*",
+    "@infinity-agent/client-file-upload": "workspace:*",
+    "@infinity-agent/commands": "workspace:*",
+    "@infinity-agent/cordis-host-runner": "workspace:*",
+    "@infinity-agent/credentials": "workspace:*",
+    "@infinity-agent/file-reference": "workspace:*",
+    "@infinity-agent/goal": "workspace:*",
+    "@infinity-agent/host-plugin-inventory": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/message-feedback": "workspace:*",
+    "@infinity-agent/permission-presets": "workspace:*",
+    "@infinity-agent/schedule": "workspace:*",
+    "@infinity-agent/scope": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-reference": "workspace:*",
+    "@infinity-agent/settings": "workspace:*",
+    "@infinity-agent/subagent": "workspace:*",
+    "@infinity-agent/typert-protocol": "workspace:*",
+    "@infinity-agent/user-approval": "workspace:*",
+    "@infinity-agent/user-questions": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "zod": "4.4.3",
+    "@infinity-agent/command-feedback": "workspace:*",
+    "@infinity-agent/api-terminal-controller": "workspace:*",
+    "@infinity-agent/plugin-manager": "workspace:*",
+    "@infinity-agent/mcp-manager": "workspace:*",
+    "@infinity-agent/plugin-market": "workspace:*",
+    "@infinity-agent/client-ui-plugin-manager": "workspace:*",
+    "@infinity-agent/office-to-pdf": "workspace:*",
+    "@infinity-agent/api-account-controller": "workspace:*",
+    "@infinity-agent/deepseek-account": "workspace:*",
+    "@infinity-agent/client-product-analytics": "workspace:*",
+    "@infinity-agent/agent-team": "workspace:*",
+    "@infinity-agent/client-ui-trajectory": "workspace:*",
+    "@infinity-agent/web": "workspace:*"
+  }
+}

@@ -1,0 +1,3 @@
+- name: '@infinity-agent/session'
+- name: '@infinity-agent/session-projection'
+- name: './legacy-plugin.ts'

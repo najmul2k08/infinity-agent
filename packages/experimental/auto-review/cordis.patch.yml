@@ -1,0 +1,3 @@
+- insert:
+    - id: auto-review
+      name: '@infinity-agent/experimental-auto-review'

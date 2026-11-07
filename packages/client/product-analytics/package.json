@@ -1,0 +1,86 @@
+{
+  "name": "@infinity-agent/client-product-analytics",
+  "description": "Desktop product event collection and authenticated Host reporting",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/client/product-analytics"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./types": {
+      "types": "./lib/types/events.d.ts"
+    },
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@infinity-agent/api-gateway"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/api-gateway": "workspace:*",
+    "@infinity-agent/compaction": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/host-product-telemetry-otel": "workspace:*",
+    "@infinity-agent/deepseek-account": "workspace:*",
+    "@infinity-agent/host-webserver": "workspace:*",
+    "@infinity-agent/settings": "workspace:*",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/otel": "workspace:*",
+    "@infinity-agent/app-boot": "workspace:*",
+    "@infinity-agent/loader-smoke": "workspace:*"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "dependencies": {
+    "@infinity-agent/typert-protocol": "workspace:*",
+    "@infinity-agent/schemastery": "workspace:~",
+    "zod": "4.4.3"
+  }
+}

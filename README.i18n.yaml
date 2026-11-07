@@ -1,0 +1,34 @@
+# Bilingual-pair consistency record for README.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write README.md
+/infinity-agent:
+  en: b5ab0e9dd30f49dc
+  zh: ed8de31f3212142d
+/infinity-agent/developer-preview:
+  en: 594222e161841067
+  zh: d0734dc980e40dec
+/infinity-agent/run:
+  en: 4e0248e4c6474fc6
+  zh: eb2fb8d78c7d6bc0
+/infinity-agent/run/run-from-npm:
+  en: e22005cd42e6cbad
+  zh: 0f536f4208df1d60
+/infinity-agent/run/run-from-source:
+  en: 819e3f7c144d0d64
+  zh: de815f040975dba7
+/infinity-agent/community-and-support:
+  en: 6d03b730e8a12459
+  zh: 0e3c522a9e857cc8
+/infinity-agent/contributing:
+  en: cabc2d3e9f8898bd
+  zh: 83b6d238bae29ce3
+/infinity-agent/development:
+  en: 803ca2b11b497bed
+  zh: 8b4071eb0e7783ef
+/infinity-agent/citation:
+  en: 6704e9e5a8d49a91
+  zh: 85c9cdd8d56f8e9d
+/infinity-agent/license:
+  en: 926995344fc1c72b
+  zh: c92fab5abf85932f

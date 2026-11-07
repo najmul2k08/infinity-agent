@@ -1,0 +1,58 @@
+{
+  "name": "@infinity-agent/tool-cordis",
+  "description": "Read-only runtime API inspection for Harness plugin development",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/extensions/tool-cordis"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./host": {
+      "types": "./lib/types/host.d.ts",
+      "default": "./lib/types/host.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./host/locale/*.json": "./locale/host/*.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "locale/host/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/app-boot": "workspace:*",
+    "@infinity-agent/cordis-host-runner": "workspace:*",
+    "@infinity-agent/tools": "workspace:*"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/cordis-plugin-group": "workspace:~",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/app-boot": "workspace:*",
+    "@infinity-agent/cordis-host-runner": "workspace:*",
+    "@infinity-agent/system-prompt": "workspace:*",
+    "@infinity-agent/tool-executor-native": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/schemastery": "workspace:~"
+  }
+}

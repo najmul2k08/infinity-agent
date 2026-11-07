@@ -1,0 +1,37 @@
+{
+  "name": "@infinity-agent/experimental-liveshare-protocol",
+  "description": "Liveshare wire frames and the identity contract shared by the owner bundle and the Relay",
+  "version": "0.2.2-rc.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/experimental/liveshare-protocol"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@infinity-agent/brand": "workspace:*"
+  },
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

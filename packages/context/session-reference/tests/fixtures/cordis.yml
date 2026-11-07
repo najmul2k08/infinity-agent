@@ -1,0 +1,20 @@
+- name: '@infinity-agent/session'
+- name: '@infinity-agent/system-prompt'
+- name: '@infinity-agent/tools'
+- name: '@infinity-agent/tool-executor-native'
+- name: '@infinity-agent/fs-local'
+- name: '@infinity-agent/session-projection'
+- name: '@infinity-agent/working-directory'
+- name: '@infinity-agent/tool-fs'
+- name: '@infinity-agent/session-query-sqlite'
+  config:
+    path: ':memory:'
+    openAt: never
+- name: '@infinity-agent/session-reference'
+  config:
+    maxReferenceBytes: 360
+- name: './source-session.ts'
+- name: '@infinity-agent/spill-local'
+  config:
+    root: '{{spillRoot}}'
+    cleanupPeriodDays: 0

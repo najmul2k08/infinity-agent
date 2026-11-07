@@ -1,0 +1,46 @@
+- insert:
+    - id: subagent-model-selection-settings
+      name: '@infinity-agent/tool-subagent/model-selection-settings'
+    - id: agent-preset-registry
+      name: '@infinity-agent/agent-preset-registry'
+      config:
+        default: parent
+    - id: preset-parent
+      name: '@infinity-agent/agent-preset'
+      config:
+        id: parent
+        name: Parent
+        description: Headless parent tools.
+        plugins: []
+    - id: preset-reviewer
+      name: '@infinity-agent/agent-preset'
+      config:
+        id: reviewer
+        name: Reviewer
+        description: File review.
+        plugins:
+          - id: persona
+            name: '@infinity-agent/persona'
+            config:
+              prefix: You are a file reviewer. Inspect the requested files and report your findings.
+          - id: tool-fs
+            name: '@infinity-agent/tool-fs'
+          - id: tool-subagent
+            name: '@infinity-agent/tool-subagent'
+            config:
+              provider: spawn
+              toolName: reviewer_delegate
+              allowedAgentPresets: [reviewer]
+    - id: parent-agent-preset
+      name: '../../../packages/test-support/session-snapshot/tests/fixtures/parent-agent-preset.ts'
+      config:
+        presets: [parent, reviewer, parent, reviewer, parent]
+
+- id: tool-subagent
+  name: '@infinity-agent/tool-subagent'
+  inject: [agentPresets]
+  config:
+    provider: spawn
+    toolName: subagent
+    maxDepth: 1
+    allowedAgentPresets: [reviewer]

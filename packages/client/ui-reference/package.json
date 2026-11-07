@@ -1,0 +1,79 @@
+{
+  "name": "@infinity-agent/client-ui-reference",
+  "description": "Unified Web @file and @session reference source",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/client/ui-reference"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@infinity-agent/api-remotes",
+        "@infinity-agent/api-session-controller",
+        "@infinity-agent/client-connection",
+        "@infinity-agent/client-locale",
+        "@infinity-agent/client-ui-conversation",
+        "@infinity-agent/client-ui-renderer",
+        "@infinity-agent/client-ui-input-trigger",
+        "@infinity-agent/client-ui-sidebar-right",
+        "@infinity-agent/client-ui-context-menu"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/api-remotes": "workspace:*",
+    "@infinity-agent/api-session-controller": "workspace:*",
+    "@infinity-agent/client-connection": "workspace:*",
+    "@infinity-agent/client-locale": "workspace:*",
+    "@infinity-agent/client-test-runtime": "workspace:*",
+    "@infinity-agent/client-ui-conversation": "workspace:*",
+    "react": "^18.2.0",
+    "@infinity-agent/client-ui-input-trigger": "workspace:*",
+    "@infinity-agent/client-ui-primitives": "workspace:*",
+    "@infinity-agent/client-ui-renderer": "workspace:*",
+    "@infinity-agent/client-ui-slots": "workspace:*",
+    "@infinity-agent/file-reference": "workspace:*",
+    "@infinity-agent/session-reference": "workspace:*",
+    "@infinity-agent/typert-protocol": "workspace:*",
+    "@infinity-agent/util-workspace-path": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/client-ui-sidebar-right": "workspace:*",
+    "@infinity-agent/client-ui-context-menu": "workspace:*"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ]
+}

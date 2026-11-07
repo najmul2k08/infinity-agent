@@ -1,0 +1,54 @@
+{
+  "name": "@infinity-agent/experimental-inspector-profile",
+  "description": "Optional Web bundle for raw Session logs and Chat node inspection",
+  "version": "0.2.2-rc.1",
+  "icon": "./icon.svg",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/experimental/inspector-profile"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "icon.svg",
+    "locale/*.json",
+    "docs",
+    "lib/index.js",
+    "cordis.patch.yml",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@infinity-agent/experimental-inspector": "workspace:*",
+    "@infinity-agent/experimental-session-inspector": "workspace:*",
+    "@infinity-agent/experimental-client-ui-stats": "workspace:*"
+  },
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/cordis-plugin-include": "workspace:~",
+    "js-yaml": "^4.3.2"
+  }
+}

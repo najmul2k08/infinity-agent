@@ -1,0 +1,52 @@
+{
+  "name": "@infinity-agent/tmux-context",
+  "description": "Opt-in durable per-step context with this agent's tmux pane and window location",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/context/tmux-context"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@infinity-agent/schemastery": "workspace:~",
+    "zod": "4.4.3"
+  },
+  "peerDependencies": {
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/shell": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/session-projection": "workspace:*"
+  },
+  "devDependencies": {
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-loop-testkit": "workspace:*",
+    "@infinity-agent/shell": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/system-prompt": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/session-projection": "workspace:*"
+  }
+}

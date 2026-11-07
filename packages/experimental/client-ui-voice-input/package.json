@@ -1,0 +1,83 @@
+{
+  "name": "@infinity-agent/experimental-client-ui-voice-input",
+  "description": "Record speech and insert editable text into the conversation draft",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/experimental/client-ui-voice-input"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    }
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {},
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/api-remotes": "workspace:*",
+    "@infinity-agent/api-session-controller": "workspace:*",
+    "@infinity-agent/client-locale": "workspace:*",
+    "@infinity-agent/client-ui-conversation": "workspace:*",
+    "@infinity-agent/client-ui-primitives": "workspace:*",
+    "@infinity-agent/client-ui-renderer": "workspace:*",
+    "@infinity-agent/client-ui-session": "workspace:*",
+    "@infinity-agent/client-ui-slots": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/typert-protocol": "workspace:*",
+    "@infinity-agent/experimental-api-speech-to-text": "workspace:*",
+    "@infinity-agent/experimental-speech-to-text": "workspace:*",
+    "@infinity-agent/client-test-runtime": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@testing-library/react": "^16.3.3",
+    "@infinity-agent/api-gateway": "workspace:*",
+    "@infinity-agent/client-store": "workspace:*",
+    "@infinity-agent/client-ui-plugin-manager": "workspace:*"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@infinity-agent/api-remotes",
+        "@infinity-agent/api-session-controller",
+        "@infinity-agent/client-locale",
+        "@infinity-agent/client-ui-conversation",
+        "@infinity-agent/client-ui-primitives",
+        "@infinity-agent/api-gateway",
+        "@infinity-agent/client-ui-plugin-manager"
+      ],
+      "platform": "web",
+      "external": [
+        "@infinity-agent/api-gateway/client"
+      ]
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  }
+}

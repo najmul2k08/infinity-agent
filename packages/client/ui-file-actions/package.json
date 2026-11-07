@@ -1,0 +1,73 @@
+{
+  "name": "@infinity-agent/client-ui-file-actions",
+  "description": "Original-file saving and image clipboard actions for Web and Desktop",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/client/ui-file-actions"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./types": {
+      "types": "./lib/types/types.d.ts"
+    }
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@infinity-agent/client-locale",
+        "@infinity-agent/client-ui-context-menu",
+        "@infinity-agent/api-workspace-files",
+        "@infinity-agent/api-session-controller"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "@infinity-agent/client-ui-primitives": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/client-ui-slots": "workspace:*",
+    "@infinity-agent/api-session-controller": "workspace:*",
+    "@infinity-agent/client-test-runtime": "workspace:*",
+    "@infinity-agent/util-file-drag": "workspace:*",
+    "@infinity-agent/client-locale": "workspace:*",
+    "@infinity-agent/client-ui-context-menu": "workspace:*",
+    "@infinity-agent/api-workspace-files": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/util-workspace-path": "workspace:*",
+    "mime": "^4.1.0",
+    "@infinity-agent/client-ui-renderer": "workspace:*"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ]
+}

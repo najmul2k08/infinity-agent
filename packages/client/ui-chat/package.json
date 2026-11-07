@@ -1,0 +1,114 @@
+{
+  "name": "@infinity-agent/client-ui-chat",
+  "description": "Chat Conversation target, node definitions, renderers, and details surface",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/client/ui-chat"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./assets/*": "./lib/assets/*",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@infinity-agent/api-session-controller",
+        "@infinity-agent/api-workspace-controller",
+        "@infinity-agent/client-connection",
+        "@infinity-agent/client-locale",
+        "@infinity-agent/client-ui-conversation",
+        "@infinity-agent/client-ui-input-trigger",
+        "@infinity-agent/client-ui-layout",
+        "@infinity-agent/client-ui-renderer",
+        "@infinity-agent/client-ui-session",
+        "@infinity-agent/client-ui-settings",
+        "@infinity-agent/client-ui-sidebar-right",
+        "@infinity-agent/client-ui-workspace",
+        "@infinity-agent/client-ui-file-drag",
+        "@infinity-agent/client-ui-context-menu"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/api-remotes": "workspace:*",
+    "@infinity-agent/api-session-controller": "workspace:*",
+    "@infinity-agent/api-workspace-controller": "workspace:*",
+    "@infinity-agent/api-workspace-files": "workspace:*",
+    "@infinity-agent/attachment": "workspace:*",
+    "@infinity-agent/brand": "workspace:*",
+    "@infinity-agent/client-connection": "workspace:*",
+    "@infinity-agent/client-locale": "workspace:*",
+    "@infinity-agent/client-store": "workspace:*",
+    "@infinity-agent/client-ui-approval": "workspace:*",
+    "@infinity-agent/client-ui-conversation": "workspace:*",
+    "@infinity-agent/client-ui-input-trigger": "workspace:*",
+    "@infinity-agent/client-ui-layout": "workspace:*",
+    "@infinity-agent/client-ui-primitives": "workspace:*",
+    "@infinity-agent/client-ui-renderer": "workspace:*",
+    "@infinity-agent/client-ui-session": "workspace:*",
+    "@infinity-agent/client-ui-settings": "workspace:*",
+    "@infinity-agent/client-ui-sidebar-browser": "workspace:*",
+    "@infinity-agent/client-ui-sidebar-documentpreview": "workspace:*",
+    "@infinity-agent/client-ui-sidebar-right": "workspace:*",
+    "@infinity-agent/client-ui-slots": "workspace:*",
+    "@infinity-agent/client-ui-workspace": "workspace:*",
+    "@infinity-agent/commands": "workspace:*",
+    "@infinity-agent/compaction": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/llm-retry": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-stats": "workspace:*",
+    "@infinity-agent/session-turn-outline": "workspace:*",
+    "@infinity-agent/subagent": "workspace:*",
+    "@infinity-agent/token-meter": "workspace:*",
+    "@infinity-agent/util-workspace-path": "workspace:*",
+    "@infinity-agent/tool-executor-ptc": "workspace:*",
+    "@infinity-agent/util-values": "workspace:*",
+    "@tanstack/react-virtual": "3.14.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@infinity-agent/settings": "workspace:*",
+    "@infinity-agent/client-product-analytics": "workspace:*",
+    "@infinity-agent/client-ui-file-drag": "workspace:*",
+    "@infinity-agent/client-ui-context-menu": "workspace:*"
+  },
+  "dependencies": {
+    "@infinity-agent/schemastery": "workspace:~"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/assets",
+    "lib/types/**/*.d.ts"
+  ]
+}

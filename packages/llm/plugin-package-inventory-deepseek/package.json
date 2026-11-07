@@ -1,0 +1,65 @@
+{
+  "name": "@infinity-agent/plugin-package-inventory-deepseek",
+  "description": "Active Loader-backed plugin package inventory for official DeepSeek LLM API requests",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/llm/plugin-package-inventory-deepseek"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@infinity-agent/brand": "workspace:*",
+    "@infinity-agent/schemastery": "workspace:~"
+  },
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-preset-registry": "workspace:*",
+    "@infinity-agent/deepseek-llm-api-extensions": "workspace:*",
+    "@infinity-agent/session": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@infinity-agent/agent-preset-registry": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@infinity-agent/app-boot": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/cordis-plugin-include": "workspace:~",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-preset-registry": "workspace:*",
+    "@infinity-agent/deepseek-llm-api-extensions": "workspace:*",
+    "@infinity-agent/scope": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*"
+  }
+}

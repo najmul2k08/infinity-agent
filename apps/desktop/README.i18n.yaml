@@ -1,0 +1,79 @@
+# Bilingual-pair consistency record for README.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write apps/desktop/README.md
+/:
+  en: 0d36989eb614345d
+  zh: a0a1a18c07621393
+/infinity-agent-desktop:
+  en: 8f5b9ba9d04928c0
+  zh: 1ec6302462db7201
+/infinity-agent-desktop/summary:
+  en: 7bc8bf30de693222
+  zh: e85993d8852b6cab
+/infinity-agent-desktop/table-of-contents:
+  en: 127ea90553cb6af7
+  zh: 7b1c5aec8558c684
+/infinity-agent-desktop/application-overview:
+  en: 8f090e296b1d42ce
+  zh: e857ab18b24fc082
+/infinity-agent-desktop/terminal-command:
+  en: 5f2d25a1d8472647
+  zh: 2acb5c5d7d1917e2
+/infinity-agent-desktop/closing-the-window-and-quitting:
+  en: 29a695713fce4572
+  zh: 5ce2100284db6b95
+/infinity-agent-desktop/key-technical-decisions:
+  en: 3724c53da4f7647b
+  zh: 76ae549d43c99bb4
+/infinity-agent-desktop/key-technical-decisions/bundled-workspace-dependencies:
+  en: 3368ff9b955ada69
+  zh: e9209ef6ad4fd305
+/infinity-agent-desktop/bundled-command-runtime:
+  en: 372297005b57a08b
+  zh: 074a635ac17e4362
+/infinity-agent-desktop/installation-ownership:
+  en: 575d82acb5d61018
+  zh: b1064786f63863f7
+/infinity-agent-desktop/installation-ownership/runtime-and-plugin-activation:
+  en: 4951cd3ee659eb33
+  zh: 96bdd6358dad587a
+/infinity-agent-desktop/installation-ownership/host-environment:
+  en: 98cf848762482d48
+  zh: 74f9100a39ec8c2f
+/infinity-agent-desktop/develop:
+  en: faf7676ba18bbf2f
+  zh: f1d7b75ad348c548
+/infinity-agent-desktop/develop/startup-onboarding:
+  en: 67dc7ef3e293236a
+  zh: 1b224db684a2d1d7
+/infinity-agent-desktop/develop/welcome-window-appearance:
+  en: 617a89aeb28131b9
+  zh: 4d84bd5d86501c86
+/infinity-agent-desktop/package:
+  en: ac31ebdd9de54f34
+  zh: 921e534d5c4b3a16
+/infinity-agent-desktop/windows-installer-interface:
+  en: 9b90a2651a6d2b52
+  zh: 86d4d9c4358aad80
+/infinity-agent-desktop/updates:
+  en: 67bf0a18faa7aa76
+  zh: 782e14ce62bb939f
+/infinity-agent-desktop/updates/local-desktop-settings:
+  en: dbe57394894b7368
+  zh: a3bb788c2ce631a4
+/infinity-agent-desktop/updates/mandatory-update-policy:
+  en: 182a9c6705213e13
+  zh: 681762f83490f4c6
+/infinity-agent-desktop/updates/local-updater-qualification:
+  en: db5e898140a73d53
+  zh: 80a9d58c74b4bb24
+/infinity-agent-desktop/low-level-development-overrides:
+  en: 8264b135871e8978
+  zh: 0939aafb1b2961fc
+/infinity-agent-desktop/known-limitations:
+  en: df42b200f1951dcb
+  zh: 9032bfd1f1bd0c31
+/infinity-agent-desktop/dev-note:
+  en: 8e26b460ba31f21b
+  zh: fbcd0307b3867125

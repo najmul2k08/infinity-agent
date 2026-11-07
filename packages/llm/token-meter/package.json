@@ -1,0 +1,63 @@
+{
+  "name": "@infinity-agent/token-meter",
+  "description": "Replay-aware token measurement service (ctx.tokenMeter) for the Infinity agent",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/llm/token-meter"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client.d.ts",
+      "default": "./lib/types/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./estimate": {
+      "types": "./lib/types/estimate.d.ts",
+      "default": "./lib/types/estimate.js"
+    },
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/compaction": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/llm-retry": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/compaction-image-offload": "workspace:*"
+  },
+  "dependencies": {
+    "@infinity-agent/util-values": "workspace:*",
+    "@infinity-agent/schemastery": "workspace:~",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/compaction": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/llm-retry": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/compaction-image-offload": "workspace:*"
+  }
+}

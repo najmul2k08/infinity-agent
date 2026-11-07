@@ -1,0 +1,173 @@
+{
+  "name": "@infinity-agent/api-session-controller",
+  "description": "Session Remote commands, cold reads, and live control transport",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/api/session-controller"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./remote-events": {
+      "types": "./lib/types/remote-events.d.ts",
+      "default": "./lib/types/remote-events.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "external": [
+        "@infinity-agent/api-gateway/client"
+      ],
+      "inject": [
+        "@infinity-agent/api-gateway",
+        "@infinity-agent/client-file-upload"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@infinity-agent/brand": "workspace:*",
+    "@infinity-agent/deque": "workspace:*",
+    "@infinity-agent/timeout": "workspace:*",
+    "@infinity-agent/schemastery": "workspace:~",
+    "mime-types": "^3.0.2",
+    "zod": "4.4.3"
+  },
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-default-model": "workspace:*",
+    "@infinity-agent/agent-preset-registry": "workspace:*",
+    "@infinity-agent/api-gateway": "workspace:*",
+    "@infinity-agent/attachment": "workspace:*",
+    "@infinity-agent/client-connection": "workspace:*",
+    "@infinity-agent/client-file-upload": "workspace:*",
+    "@infinity-agent/commands": "workspace:*",
+    "@infinity-agent/credentials": "workspace:*",
+    "@infinity-agent/file-reference": "workspace:*",
+    "@infinity-agent/fs": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/native-command": "workspace:*",
+    "@infinity-agent/scope": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-persistence": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/session-projection-cache": "workspace:*",
+    "@infinity-agent/session-query": "workspace:*",
+    "@infinity-agent/session-title": "workspace:*",
+    "@infinity-agent/settings": "workspace:*",
+    "@infinity-agent/skill": "workspace:*",
+    "@infinity-agent/subagent": "workspace:*",
+    "@infinity-agent/typert-protocol": "workspace:*",
+    "@infinity-agent/typert-registry": "workspace:*",
+    "@infinity-agent/util-time": "workspace:*",
+    "@infinity-agent/util-values": "workspace:*",
+    "@infinity-agent/util-workspace-path": "workspace:*",
+    "@infinity-agent/workspace": "workspace:*",
+    "@infinity-agent/working-directory": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@infinity-agent/session-persistence": {
+      "optional": true
+    },
+    "@infinity-agent/session-projection-cache": {
+      "optional": true
+    },
+    "@infinity-agent/settings": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@infinity-agent/api-remote-access": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-default-model": "workspace:*",
+    "@infinity-agent/agent-loop": "workspace:*",
+    "@infinity-agent/agent-loop-testkit": "workspace:*",
+    "@infinity-agent/agent-preset-registry": "workspace:*",
+    "@infinity-agent/api-gateway": "workspace:*",
+    "@infinity-agent/attachment": "workspace:*",
+    "@infinity-agent/attachment-local": "workspace:*",
+    "@infinity-agent/client-connection": "workspace:*",
+    "@infinity-agent/client-file-upload": "workspace:*",
+    "@infinity-agent/client-store": "workspace:*",
+    "@infinity-agent/client-test-runtime": "workspace:*",
+    "@infinity-agent/commands": "workspace:*",
+    "@infinity-agent/credentials": "workspace:*",
+    "@infinity-agent/file-reference": "workspace:*",
+    "@infinity-agent/fs": "workspace:*",
+    "@infinity-agent/fs-local": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/native-command": "workspace:*",
+    "@infinity-agent/permission-presets": "workspace:*",
+    "@infinity-agent/remote-mock": "workspace:*",
+    "@infinity-agent/scope": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-persistence": "workspace:*",
+    "@infinity-agent/session-persistence-jsonl": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/session-projection-cache": "workspace:*",
+    "@infinity-agent/session-query": "workspace:*",
+    "@infinity-agent/session-title": "workspace:*",
+    "@infinity-agent/settings": "workspace:*",
+    "@infinity-agent/skill": "workspace:*",
+    "@infinity-agent/storage": "workspace:*",
+    "@infinity-agent/storage-domain": "workspace:*",
+    "@infinity-agent/storage-json": "workspace:*",
+    "@infinity-agent/subagent": "workspace:*",
+    "@infinity-agent/typert-protocol": "workspace:*",
+    "@infinity-agent/typert-registry": "workspace:*",
+    "@infinity-agent/util-crypto": "workspace:*",
+    "@infinity-agent/util-time": "workspace:*",
+    "@infinity-agent/util-values": "workspace:*",
+    "@infinity-agent/util-workspace-path": "workspace:*",
+    "@infinity-agent/workspace": "workspace:*",
+    "@types/mime-types": "^3.0.1",
+    "@infinity-agent/working-directory": "workspace:*"
+  }
+}

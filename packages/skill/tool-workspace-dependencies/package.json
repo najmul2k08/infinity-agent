@@ -1,0 +1,48 @@
+{
+  "name": "@infinity-agent/tool-workspace-dependencies",
+  "description": "The load_workspace_dependencies tool: absolute paths into a bundled Python, Node.js, and pnpm payload",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/skill/tool-workspace-dependencies"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/tool-executor-native": "workspace:*",
+    "@infinity-agent/tool-testkit": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/cordis-plugin-include": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/system-prompt": "workspace:*"
+  },
+  "dependencies": {
+    "@infinity-agent/schemastery": "workspace:~"
+  }
+}

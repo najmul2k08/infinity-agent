@@ -1,0 +1,94 @@
+{
+  "name": "@infinity-agent/client-ui-open-in-app",
+  "description": "Session application submenus and native opening controls for directories and previewed files",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/client/ui-open-in-app"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "dsh": {
+    "client": {
+      "inject": [
+        "@infinity-agent/api-gateway",
+        "@infinity-agent/api-remotes",
+        "@infinity-agent/api-session-controller",
+        "@infinity-agent/client-locale",
+        "@infinity-agent/client-shortcuts",
+        "@infinity-agent/client-ui-conversation",
+        "@infinity-agent/client-ui-layout",
+        "@infinity-agent/client-ui-renderer",
+        "@infinity-agent/client-ui-session",
+        "@infinity-agent/client-ui-sidebar-documentpreview",
+        "@infinity-agent/client-ui-context-menu",
+        "@infinity-agent/client-ui-sidebar-right",
+        "@infinity-agent/api-workspace-files",
+        "@infinity-agent/client-ui-workspace"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/api-gateway": "workspace:*",
+    "@infinity-agent/api-remotes": "workspace:*",
+    "@infinity-agent/api-session-controller": "workspace:*",
+    "@infinity-agent/client-locale": "workspace:*",
+    "@infinity-agent/client-store": "workspace:*",
+    "@infinity-agent/client-test-runtime": "workspace:*",
+    "@infinity-agent/client-ui-conversation": "workspace:*",
+    "@infinity-agent/client-ui-layout": "workspace:*",
+    "@infinity-agent/client-ui-primitives": "workspace:*",
+    "@infinity-agent/client-ui-renderer": "workspace:*",
+    "@infinity-agent/client-ui-session": "workspace:*",
+    "@infinity-agent/client-ui-sidebar-documentpreview": "workspace:*",
+    "@infinity-agent/client-ui-sidebar-files": "workspace:*",
+    "@infinity-agent/client-ui-slots": "workspace:*",
+    "@infinity-agent/host-open-in-app": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "react": "^18.2.0",
+    "@infinity-agent/client-ui-deliverables": "workspace:*",
+    "@infinity-agent/native-command": "workspace:*",
+    "@infinity-agent/client-shortcuts": "workspace:*",
+    "@infinity-agent/client-ui-context-menu": "workspace:*",
+    "@infinity-agent/client-ui-file-actions": "workspace:*",
+    "@infinity-agent/util-workspace-path": "workspace:*",
+    "@infinity-agent/client-ui-sidebar-right": "workspace:*",
+    "@infinity-agent/api-workspace-files": "workspace:*",
+    "@infinity-agent/client-ui-sidebar-browser": "workspace:*",
+    "@infinity-agent/client-ui-workspace": "workspace:*"
+  }
+}

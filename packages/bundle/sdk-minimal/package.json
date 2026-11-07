@@ -1,0 +1,80 @@
+{
+  "name": "@infinity-agent/sdk-minimal",
+  "description": "The standalone minimal SDK profile bundle: JSON-RPC, one DeepSeek adapter, persistent shell, and JSONL sessions",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/bundle/sdk-minimal"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "cordis.patch.yml",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@infinity-agent/cordis-plugin-timer": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-loop": "workspace:*",
+    "@infinity-agent/attachment-local": "workspace:*",
+    "@infinity-agent/compaction-basic": "workspace:*",
+    "@infinity-agent/compaction-image-offload": "workspace:*",
+    "@infinity-agent/deepseek-llm-api-extensions": "workspace:*",
+    "@infinity-agent/jobs-local": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/llm-deepseek-api-key": "workspace:*",
+    "@infinity-agent/llm-retry": "workspace:*",
+    "@infinity-agent/mcp-resources": "workspace:*",
+    "@infinity-agent/plugin-package-inventory-deepseek": "workspace:*",
+    "@infinity-agent/sandbox-local": "workspace:*",
+    "@infinity-agent/sandbox-policy": "workspace:*",
+    "@infinity-agent/sdk-app": "workspace:*",
+    "@infinity-agent/sdk-jsonrpc-server": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-checkpoint-policy": "workspace:*",
+    "@infinity-agent/session-log-deepseek": "workspace:*",
+    "@infinity-agent/session-persistence-jsonl": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/session-title": "workspace:*",
+    "@infinity-agent/subprocess-local": "workspace:*",
+    "@infinity-agent/system-prompt": "workspace:*",
+    "@infinity-agent/terminal": "workspace:*",
+    "@infinity-agent/terminal-bash": "workspace:*",
+    "@infinity-agent/token-meter": "workspace:*",
+    "@infinity-agent/tool-bash-persistent": "workspace:*",
+    "@infinity-agent/tool-executor-native": "workspace:*",
+    "@infinity-agent/tool-fs": "workspace:*",
+    "@infinity-agent/tool-pwsh-persistent": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/working-directory": "workspace:*",
+    "@infinity-agent/tool-working-directory": "workspace:*",
+    "@infinity-agent/fs-local": "workspace:*"
+  },
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  }
+}

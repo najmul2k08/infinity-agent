@@ -1,0 +1,85 @@
+# Minimal keyless composition: real app, pwsh executor, and pwsh tool; replayed model.
+- id: llm-deepseek
+  name: '@infinity-agent/llm-deepseek-api-key'
+  disabled: true
+
+- insert:
+    - id: llm-replay
+      name: '@infinity-agent/llm-replay'
+      config:
+        providers:
+          - id: deepseek-official
+            name: DeepSeek
+            models:
+              - id: deepseek-v4-pro
+
+- id: subprocess
+  name: '@infinity-agent/subprocess-local'
+
+- id: bash-sandbox
+  name: '@infinity-agent/bash-sandbox'
+  disabled: true
+
+- id: pwsh-sandbox
+  name: '@infinity-agent/pwsh-sandbox'
+  disabled: false
+
+- id: shell-env
+  name: '@infinity-agent/shell-env'
+
+- id: agent-default-model
+  name: '@infinity-agent/agent-default-model'
+  config:
+    provider: deepseek-official
+    model: deepseek-v4-pro
+
+- id: session-persistence-jsonl
+  name: '@infinity-agent/session-persistence-jsonl'
+  config:
+    root: !!js dshHomePath('sessions')
+    compression: none
+
+- id: agent-instructions
+  name: '@infinity-agent/agent-instructions'
+  disabled: true
+
+- id: system-prompt
+  name: '@infinity-agent/system-prompt'
+  config:
+    personaPrefix: You are a concise snapshot agent.
+
+- id: goal
+  name: '@infinity-agent/goal'
+  disabled: true
+
+- id: goal-round-driver
+  name: '@infinity-agent/goal-round-driver'
+  disabled: true
+
+- id: command-goal
+  name: '@infinity-agent/command-goal'
+  disabled: true
+
+- id: tool-goal
+  name: '@infinity-agent/tool-goal'
+  disabled: true
+
+- id: skill
+  name: '@infinity-agent/skill'
+  disabled: true
+
+- id: skill-filesystem
+  name: '@infinity-agent/skill-filesystem'
+  disabled: true
+
+- id: tool-skill
+  name: '@infinity-agent/tool-skill'
+  disabled: true
+
+- id: tool-bash
+  name: '@infinity-agent/tool-bash'
+  disabled: true
+
+- id: tool-pwsh
+  name: '@infinity-agent/tool-pwsh'
+  disabled: false

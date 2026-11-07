@@ -1,0 +1,53 @@
+{
+  "name": "@infinity-agent/experimental-ptc-runtime-python",
+  "description": "CPython subprocess implementation of the Infinity agent PTC execution seam",
+  "version": "0.2.2-rc.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/experimental/ptc-runtime-python"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "py/**/*.py",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/ptc-runtime": "workspace:*",
+    "@infinity-agent/timeout": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/util-values": "workspace:*",
+    "@infinity-agent/sandbox": "workspace:*",
+    "@infinity-agent/sandbox-policy": "workspace:*"
+  },
+  "devDependencies": {
+    "@infinity-agent/ptc-runtime": "workspace:*",
+    "@infinity-agent/timeout": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/util-values": "workspace:*",
+    "@infinity-agent/sandbox": "workspace:*",
+    "@infinity-agent/sandbox-policy": "workspace:*",
+    "@infinity-agent/sandbox-local": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/session": "workspace:*"
+  },
+  "dependencies": {
+    "@infinity-agent/schemastery": "workspace:~"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

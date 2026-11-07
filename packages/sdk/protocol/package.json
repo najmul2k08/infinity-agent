@@ -1,0 +1,44 @@
+{
+  "name": "@infinity-agent/sdk-protocol",
+  "description": "Shared wire protocol for the Infinity agent SDK runtime: the newline-delimited JSON-RPC stdio transport and the named request, result, and notification types spoken between the runtime server and SDK clients",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/sdk/protocol"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/commands": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/subagent": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/user-questions": "workspace:*"
+  },
+  "devDependencies": {
+    "@infinity-agent/commands": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/subagent": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/user-questions": "workspace:*"
+  }
+}

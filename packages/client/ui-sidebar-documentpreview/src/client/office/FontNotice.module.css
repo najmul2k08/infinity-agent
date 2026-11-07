@@ -1,0 +1,136 @@
+.anchor {
+  display: inline-flex;
+  flex: none;
+}
+
+.anchor .warning {
+  color: var(--ia-alias-state-warn-label);
+}
+
+@media (hover: hover) {
+  .anchor .warning:hover {
+    color: var(--ia-alias-state-warn-label);
+  }
+}
+
+.anchor .warning[aria-expanded='true'] {
+  background: var(--ia-alias-state-warn-tertiary);
+}
+
+@media (hover: hover) {
+  .anchor .warning:hover {
+    background: var(--ia-alias-state-warn-tertiary);
+  }
+}
+
+.panel {
+  --ia-scrollbar-thumb: var(--ia-alias-scrollbar-bg-l2);
+  --ia-scrollbar-thumb-hover: var(--ia-alias-scrollbar-hover-l2);
+  position: fixed;
+  z-index: 100;
+  box-sizing: border-box;
+  width: min(340px, calc(100vw - 24px));
+  max-height: calc(100dvh - 24px);
+  padding: 16px;
+  overflow: auto;
+  color: var(--ia-alias-label-primary);
+  background: var(--ia-alias-bg-layer-2);
+  border: 0;
+  border-radius: var(--ia-radius-lg);
+  box-shadow: var(--ia-elevation-prominent);
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: calc(100vw - 24px);
+  position-area: none;
+  top: max(12px, calc(anchor(bottom) + 8px));
+  bottom: 12px;
+  left: max(12px, anchor(left));
+  right: 12px;
+  position-try-fallbacks: --ia-fonts-window, --ia-fonts-opposite, --ia-fonts-wide-opposite, --ia-fonts-tall, --ia-fonts-viewport;
+  align-self: start;
+  justify-self: start;
+  height: fit-content;
+  min-height: 0;
+  margin: 0;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.panelHeader h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.description {
+  margin: 8px 0 16px;
+  color: var(--ia-alias-label-secondary);
+}
+
+.count {
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: var(--ia-alias-label-tertiary);
+}
+
+.fonts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-wrap: anywhere;
+}
+
+.fonts li {
+  padding: 8px 0;
+  border-top: 0.5px solid var(--ia-alias-border-l2);
+}
+
+@position-try --ia-fonts-window {
+  position-area: none;
+  top: max(12px, calc(anchor(bottom) + 8px));
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  margin: 0;
+  align-self: safe start;
+  justify-self: safe end;
+}
+
+@position-try --ia-fonts-opposite {
+  top: max(12px, var(--ia-frame-overlay-top, 12px));
+  bottom: max(12px, calc(anchor(top) + 8px));
+  align-self: end;
+}
+
+@position-try --ia-fonts-wide-opposite {
+  top: max(12px, var(--ia-frame-overlay-top, 12px));
+  bottom: max(12px, calc(anchor(top) + 8px));
+  left: 12px;
+  right: 12px;
+  align-self: end;
+  justify-self: safe end;
+}
+
+@position-try --ia-fonts-tall {
+  position-area: none;
+  top: max(12px, var(--ia-frame-overlay-top, 12px));
+  bottom: 12px;
+  left: max(12px, anchor(left));
+  right: 12px;
+  margin: 0;
+  align-self: safe start;
+  justify-self: start;
+}
+
+@position-try --ia-fonts-viewport {
+  position-area: none;
+  inset: max(12px, var(--ia-frame-overlay-top, 12px)) 12px 12px;
+  margin: 0;
+  align-self: safe start;
+  justify-self: safe end;
+}

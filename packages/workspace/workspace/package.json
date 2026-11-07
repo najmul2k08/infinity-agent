@@ -1,0 +1,56 @@
+{
+  "name": "@infinity-agent/workspace",
+  "description": "Workspace entity registry (ctx.workspaceRegistry): durable workspace records with validated session attachment over the domain data form for the Infinity agent",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/workspace/workspace"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-persistence": "workspace:*",
+    "@infinity-agent/storage": "workspace:*",
+    "@infinity-agent/storage-domain": "workspace:*",
+    "@infinity-agent/typert-protocol": "workspace:*"
+  },
+  "dependencies": {
+    "@infinity-agent/brand": "workspace:*",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-persistence": "workspace:*",
+    "@infinity-agent/storage": "workspace:*",
+    "@infinity-agent/storage-domain": "workspace:*",
+    "@infinity-agent/typert-protocol": "workspace:*"
+  }
+}

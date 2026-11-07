@@ -1,0 +1,105 @@
+{
+  "name": "@infinity-agent/experimental-claude-code-mods",
+  "description": "Experimental bridge: load Claude Code mods (hooks modules) and run their hook chains on Infinity agent extension points",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/experimental/claude-code-mods"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./testing": {
+      "types": "./lib/types/testing.d.ts",
+      "default": "./lib/types/testing.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./examples/*": "./examples/*",
+    "./src/*": "./src/*",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@infinity-agent/util-crypto": "workspace:*",
+    "@infinity-agent/util-values": "workspace:*",
+    "@infinity-agent/schemastery": "workspace:~",
+    "zod": "^4.4.3"
+  },
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/commands": "workspace:*",
+    "@infinity-agent/fs": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/scope": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/storage-domain": "workspace:*",
+    "@infinity-agent/subprocess": "workspace:*",
+    "@infinity-agent/token-meter": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/typert-protocol": "workspace:*",
+    "@infinity-agent/user-questions": "workspace:*",
+    "@infinity-agent/working-directory": "workspace:*"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/cordis-plugin-include": "workspace:~",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-loop": "workspace:*",
+    "@infinity-agent/agent-loop-testkit": "workspace:*",
+    "@infinity-agent/attachment": "workspace:*",
+    "@infinity-agent/commands": "workspace:*",
+    "@infinity-agent/fs": "workspace:*",
+    "@infinity-agent/fs-local": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/scope": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/storage": "workspace:*",
+    "@infinity-agent/storage-domain": "workspace:*",
+    "@infinity-agent/storage-json": "workspace:*",
+    "@infinity-agent/subprocess": "workspace:*",
+    "@infinity-agent/subprocess-local": "workspace:*",
+    "@infinity-agent/system-prompt": "workspace:*",
+    "@infinity-agent/token-meter": "workspace:*",
+    "@infinity-agent/tool-executor-native": "workspace:*",
+    "@infinity-agent/tool-testkit": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/typert-protocol": "workspace:*",
+    "@infinity-agent/user-questions": "workspace:*",
+    "@infinity-agent/working-directory": "workspace:*",
+    "@infinity-agent/session-persistence-jsonl": "workspace:*"
+  }
+}

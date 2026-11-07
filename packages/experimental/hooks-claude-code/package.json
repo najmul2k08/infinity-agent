@@ -1,0 +1,63 @@
+{
+  "name": "@infinity-agent/hooks-claude-code",
+  "description": "Bridge plugin: run a Claude Code hooks.json / settings hook config on the Infinity agent interception seams",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/experimental/hooks-claude-code"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@infinity-agent/schemastery": "workspace:~"
+  },
+  "peerDependencies": {
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/hook-protocol": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/subagent": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/working-directory": "workspace:*"
+  },
+  "devDependencies": {
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-loop": "workspace:*",
+    "@infinity-agent/agent-loop-testkit": "workspace:*",
+    "@infinity-agent/shell": "workspace:*",
+    "@infinity-agent/bash-local": "workspace:*",
+    "@infinity-agent/subprocess-local": "workspace:*",
+    "@infinity-agent/hook-protocol": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-persistence-jsonl": "workspace:*",
+    "@infinity-agent/subagent": "workspace:*",
+    "@infinity-agent/tool-testkit": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/working-directory": "workspace:*",
+    "@infinity-agent/fs-local": "workspace:*"
+  }
+}

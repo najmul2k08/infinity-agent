@@ -1,0 +1,5 @@
+- insert:
+    - id: workspace
+      name: '@infinity-agent/workspace'
+    - id: subagent-archive-lineage-fixture
+      name: './fixture.mjs'

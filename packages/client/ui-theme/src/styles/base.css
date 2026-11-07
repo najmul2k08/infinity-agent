@@ -1,0 +1,39 @@
+/* Base variables referenced by the token sheets and component CSS but defined
+ * upstream (deepsuite theme/global.css) — supplied here so the composite
+ * --ia-font-* variables resolve and motion rides the upstream curve. Code
+ * font stack deliberately omits a bare `monospace` tail (Windows CJK falls
+ * back to SimSun otherwise). */
+:root {
+  --ia-font-family-text-default: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --ia-font-family: var(--ia-font-family-text-default);
+  --ia-font-family-brand: 'Montserrat', var(--ia-font-family-text-default);
+  --ia-font-family-code-default: 'SF Mono', 'JetBrains Mono', 'Fira Code', Consolas,
+    'Liberation Mono', Menlo, Courier, 'PingFang SC', 'Microsoft YaHei';
+  --ds-font-family-code: var(--ia-font-family-code-default);
+  --ds-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ds-transition-duration: 0.2s;
+  --ds-transition-duration-fast: 0.1s;
+  --ds-transition-duration-slow: 0.3s;
+  --ia-radius-xs: 4px;
+  --ia-radius-sm: 8px;
+  --ia-radius-md: 12px;
+  --ia-radius-lg: 16px;
+  --ia-radius-xl: 20px;
+  --ia-radius-panel: 28px;
+}
+
+/* User font lists (--ia-font-family-text/-code, written on body by the theme
+ * boot script and ThemePresenter) lead the built-in stacks. An unset list
+ * falls back to the built-in stack itself; the repeated families are inert. */
+body {
+  --ia-font-family: var(--ia-font-family-text, var(--ia-font-family-text-default)), var(--ia-font-family-text-default);
+  --ds-font-family-code: var(--ia-font-family-code, var(--ia-font-family-code-default)), var(--ia-font-family-code-default);
+  --ia-alias-settings-card-fill: var(--ia-alias-bg-layer-2);
+  --ia-alias-settings-card-stroke: var(--ia-alias-border-l4);
+}
+
+[data-dsh-automatic-focus]:focus,
+[data-dsh-automatic-focus]:focus:focus-visible {
+  outline: none;
+}

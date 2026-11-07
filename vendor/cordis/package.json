@@ -1,0 +1,51 @@
+{
+  "name": "@infinity-agent/cordis",
+  "description": "Meta-Framework for Modern JavaScript Applications",
+  "version": "4.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepseek-ai/infinity-agent.git",
+    "directory": "vendor/cordis"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "bin": "bin.js",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/types/**/*.d.ts",
+    "lib/types/**/*.d.ts.map",
+    "bin.js",
+    "src"
+  ],
+  "author": "Shigma <shigma10826@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/cordis-plugin-include": "workspace:~",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~"
+  },
+  "peerDependenciesMeta": {
+    "@infinity-agent/cordis-plugin-include": {
+      "optional": true
+    },
+    "@infinity-agent/cordis-plugin-loader": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@standard-schema/spec": "^1.1.0",
+    "@infinity-agent/cosmokit": "workspace:~"
+  }
+}

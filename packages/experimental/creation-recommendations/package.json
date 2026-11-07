@@ -1,0 +1,72 @@
+{
+  "name": "@infinity-agent/creation-recommendations",
+  "description": "Create persistent removable interface plugins from explicit conversation needs",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/experimental/creation-recommendations"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./references/*.md": "./references/*.md",
+    "./skills/*.md": "./skills/*.md"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/skill": "workspace:*"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/plugin-manager": "workspace:*",
+    "@infinity-agent/api-remote-access": "workspace:*",
+    "@infinity-agent/subagent": "workspace:*",
+    "@infinity-agent/app-boot": "workspace:*",
+    "@infinity-agent/skill": "workspace:*",
+    "@infinity-agent/sandbox-policy": "workspace:*",
+    "@infinity-agent/tool-testkit": "workspace:*"
+  },
+  "dependencies": {
+    "yaml": "^2.9.0",
+    "resolve.exports": "^2.0.3",
+    "zod": "4.4.3",
+    "@infinity-agent/client-ui-creation-recommendations": "workspace:*",
+    "@infinity-agent/action-cards": "workspace:*",
+    "@infinity-agent/client-ui-action-cards": "workspace:*"
+  },
+  "files": [
+    "icon.svg",
+    "locale/*.json",
+    "lib/index.js",
+    "references/*.md",
+    "skills/*.md",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "icon": "./icon.svg"
+}

@@ -1,0 +1,60 @@
+{
+  "name": "@infinity-agent/settings",
+  "description": "Abstract user-settings seam (ctx.settings) for the Infinity agent",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/settings/settings"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/brand": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/schemastery": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/brand": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/schemastery": "workspace:~",
+    "@infinity-agent/cordis-plugin-timer": "workspace:~",
+    "@infinity-agent/app-boot": "workspace:*",
+    "@infinity-agent/hmr": "workspace:*",
+    "@infinity-agent/agent-default-model": "workspace:*",
+    "yaml": "^2.8.1"
+  },
+  "dependencies": {
+    "@infinity-agent/util-values": "workspace:*",
+    "@infinity-agent/config-editor": "workspace:*",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/cosmokit": "workspace:~",
+    "yaml": "^2.8.1"
+  }
+}

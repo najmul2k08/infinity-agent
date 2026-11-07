@@ -1,0 +1,71 @@
+{
+  "name": "@infinity-agent/web-deepseek-api",
+  "description": "DeepSeek Search and Fetch API providers for the Infinity agent web capability seam (ctx.web)",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/web/web-deepseek-api"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/credentials": "workspace:*",
+    "@infinity-agent/deepseek-account": "workspace:*",
+    "@infinity-agent/launch-environment": "workspace:*",
+    "@infinity-agent/llm-deepseek": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/web": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/llm-deepseek-api-key": "workspace:*",
+    "@infinity-agent/llm-deepseek-account": "workspace:*"
+  },
+  "dependencies": {
+    "@infinity-agent/schemastery": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/credentials": "workspace:*",
+    "@infinity-agent/credentials-local": "workspace:*",
+    "@infinity-agent/deepseek-account": "workspace:*",
+    "@infinity-agent/launch-environment": "workspace:*",
+    "@infinity-agent/llm-deepseek": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/web": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/http-proxy": "workspace:*",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/llm-deepseek-api-key": "workspace:*",
+    "@infinity-agent/llm-deepseek-account": "workspace:*",
+    "@infinity-agent/app-boot": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@infinity-agent/deepseek-account": {
+      "optional": true
+    }
+  }
+}

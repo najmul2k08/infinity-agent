@@ -1,0 +1,64 @@
+{
+  "name": "@infinity-agent/session-telemetry-otel",
+  "description": "Feedback-authorized Session logs over byte-bounded OpenTelemetry HTTP requests",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/session/session-telemetry-otel"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@opentelemetry/api-logs": "0.222.0",
+    "@infinity-agent/schemastery": "workspace:~"
+  },
+  "peerDependencies": {
+    "@infinity-agent/command-feedback": "workspace:*",
+    "@infinity-agent/message-feedback": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-telemetry": "workspace:*",
+    "@infinity-agent/anonymous-user-id": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/otel": "workspace:*"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis-plugin-logger-console": "workspace:~",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/app-boot": "workspace:*",
+    "@infinity-agent/bash-local": "workspace:*",
+    "@infinity-agent/command-feedback": "workspace:*",
+    "@infinity-agent/message-feedback": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/loader-smoke": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-checkpoint-policy": "workspace:*",
+    "@infinity-agent/session-persistence-jsonl": "workspace:*",
+    "@infinity-agent/session-telemetry": "workspace:*",
+    "@infinity-agent/subprocess-local": "workspace:*",
+    "@infinity-agent/anonymous-user-id": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/http-proxy": "workspace:*",
+    "@infinity-agent/otel": "workspace:*"
+  }
+}

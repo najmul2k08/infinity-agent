@@ -1,0 +1,20 @@
+- insert:
+    - id: deepseek-fetch-fixture
+      name: './deepseek-fetch-fixture.mjs'
+
+- id: web
+  name: '@infinity-agent/web'
+  config:
+    searchProvider: deepseek-search-api
+    fetchProvider: deepseek-fetch-api
+
+- id: web-deepseek-api
+  name: '@infinity-agent/web-deepseek-api'
+  config:
+    fetchApiKeyEnv: INFINITY_SNAPSHOT_FETCH_KEY
+    fetchBaseURL: http://127.0.0.1:43118/api/v1/tools
+
+- id: tool-web
+  name: '@infinity-agent/tool-web'
+  config:
+    search: false

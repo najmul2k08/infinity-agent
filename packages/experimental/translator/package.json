@@ -1,0 +1,70 @@
+{
+  "name": "@infinity-agent/experimental-translator",
+  "description": "Machine translation with reusable Session results",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/experimental/translator"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./types": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types/types.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@infinity-agent/schemastery": "workspace:~"
+  },
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/timeout": "workspace:*",
+    "@infinity-agent/util-values": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-persistence": "workspace:*",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/credentials": "workspace:*",
+    "@infinity-agent/launch-environment": "workspace:*"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/app-boot": "workspace:*",
+    "@infinity-agent/timeout": "workspace:*",
+    "@infinity-agent/util-values": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-persistence": "workspace:*",
+    "@infinity-agent/session-persistence-jsonl": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/credentials": "workspace:*",
+    "@infinity-agent/launch-environment": "workspace:*",
+    "@infinity-agent/llm-deepseek": "workspace:*",
+    "@infinity-agent/llm-deepseek-api-key": "workspace:*",
+    "@infinity-agent/llm-deepseek-account": "workspace:*",
+    "@infinity-agent/deepseek-account": "workspace:*",
+    "@infinity-agent/deepseek-llm-api-extensions": "workspace:*",
+    "@infinity-agent/session-log-deepseek": "workspace:*",
+    "@infinity-agent/session-query-sqlite": "workspace:*"
+  }
+}

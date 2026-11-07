@@ -1,0 +1,13 @@
+- insert:
+    - id: action-cards
+      name: '@infinity-agent/action-cards'
+    - id: client-ui-action-cards
+      name: '@infinity-agent/client-ui-action-cards'
+    - id: creation-recommendations
+      name: '@infinity-agent/creation-recommendations'
+    - id: client-ui-creation-recommendations
+      name: '@infinity-agent/client-ui-creation-recommendations'
+    - id: plugin-recommendations
+      name: '@infinity-agent/plugin-recommendations'
+    - id: client-ui-plugin-recommendations
+      name: '@infinity-agent/client-ui-plugin-recommendations'

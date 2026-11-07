@@ -1,0 +1,111 @@
+{
+  "name": "@infinity-agent/client-ui-conversation",
+  "description": "Target-neutral Conversation assembly, shell, composer, queue, and view navigation",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/client/ui-conversation"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@infinity-agent/api-session-controller",
+        "@infinity-agent/client-file-upload",
+        "@infinity-agent/client-locale",
+        "@infinity-agent/client-ui-layout",
+        "@infinity-agent/client-ui-renderer",
+        "@infinity-agent/client-ui-session",
+        "@infinity-agent/client-ui-settings",
+        "@infinity-agent/client-ui-workspace",
+        "@infinity-agent/client-ui-context-menu"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@infinity-agent/schemastery": "workspace:~"
+  },
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/api-remotes": "workspace:*",
+    "@infinity-agent/api-session-controller": "workspace:*",
+    "@infinity-agent/api-workspace-controller": "workspace:*",
+    "@infinity-agent/attachment": "workspace:*",
+    "@infinity-agent/client-locale": "workspace:*",
+    "@infinity-agent/client-file-upload": "workspace:*",
+    "@infinity-agent/client-store": "workspace:*",
+    "@infinity-agent/client-test-runtime": "workspace:*",
+    "@infinity-agent/client-ui-layout": "workspace:*",
+    "@infinity-agent/client-ui-primitives": "workspace:*",
+    "@infinity-agent/client-ui-renderer": "workspace:*",
+    "@infinity-agent/client-ui-session": "workspace:*",
+    "@infinity-agent/client-ui-settings": "workspace:*",
+    "@infinity-agent/client-ui-workspace": "workspace:*",
+    "@infinity-agent/client-ui-slots": "workspace:*",
+    "@infinity-agent/commands": "workspace:*",
+    "@infinity-agent/goal": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/llm-retry": "workspace:*",
+    "@infinity-agent/plan-mode": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/util-values": "workspace:*",
+    "@infinity-agent/token-meter": "workspace:*",
+    "@infinity-agent/tool-todo": "workspace:*",
+    "@infinity-agent/util-crypto": "workspace:*",
+    "@infinity-agent/workspace": "workspace:*",
+    "@infinity-agent/file-reference": "workspace:*",
+    "@infinity-agent/util-workspace-path": "workspace:*",
+    "react": "^18.2.0",
+    "@lexical/headless": "^0.49.0",
+    "react-dom": "^18.2.0",
+    "lexical": "^0.49.0",
+    "clsx": "^2.0.0",
+    "@lexical/utils": "^0.49.0",
+    "@lexical/text": "^0.49.0",
+    "@lexical/plain-text": "^0.49.0",
+    "@lexical/history": "^0.49.0",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/settings": "workspace:*",
+    "@infinity-agent/client-shortcuts": "workspace:*",
+    "@infinity-agent/client-product-analytics": "workspace:*",
+    "@infinity-agent/message-quotes": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/brand": "workspace:*",
+    "zod": "4.4.3",
+    "@infinity-agent/client-ui-context-menu": "workspace:*"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ]
+}

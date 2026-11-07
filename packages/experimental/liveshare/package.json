@@ -1,0 +1,169 @@
+{
+  "name": "@infinity-agent/experimental-liveshare",
+  "description": "Opt-in LiveShare host bundle: share a Session through a separate Relay at the view or bounded-write tier, with forking and attachment uploads as independent switches",
+  "version": "0.2.2-rc.1",
+  "icon": "./icon.svg",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/experimental/liveshare"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./types": {
+      "types": "./lib/types/share-api-types.d.ts"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "icon.svg",
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "lib/owner-gateway/cli.js",
+    "lib/retry-backoff-*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@infinity-agent/atomic-write": "workspace:*",
+    "@infinity-agent/brand": "workspace:*",
+    "@infinity-agent/experimental-liveshare-protocol": "workspace:*",
+    "@infinity-agent/http-proxy": "workspace:*",
+    "@infinity-agent/official-bundles": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/typert-protocol": "workspace:*",
+    "@infinity-agent/util-values": "workspace:*",
+    "undici": "8.11.2",
+    "ws": "^8.18.3",
+    "zod": "4.4.3"
+  },
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/scope": "workspace:*"
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-loop-testkit": "workspace:*",
+    "@infinity-agent/api-gateway": "workspace:*",
+    "@infinity-agent/api-remote-access": "workspace:*",
+    "@infinity-agent/api-remotes": "workspace:*",
+    "@infinity-agent/api-session-controller": "workspace:*",
+    "@infinity-agent/api-settings-controller": "workspace:*",
+    "@infinity-agent/api-workspace-controller": "workspace:*",
+    "@infinity-agent/api-workspace-files": "workspace:*",
+    "@infinity-agent/client-connection": "workspace:*",
+    "@infinity-agent/client-file-upload": "workspace:*",
+    "@infinity-agent/client-locale": "workspace:*",
+    "@infinity-agent/client-modules": "workspace:*",
+    "@infinity-agent/client-resources": "workspace:*",
+    "@infinity-agent/client-shortcuts": "workspace:*",
+    "@infinity-agent/client-store": "workspace:*",
+    "@infinity-agent/client-test-runtime": "workspace:*",
+    "@infinity-agent/client-ui-agent-preset": "workspace:*",
+    "@infinity-agent/client-ui-approval": "workspace:*",
+    "@infinity-agent/client-ui-attachment": "workspace:*",
+    "@infinity-agent/client-ui-brand-official": "workspace:*",
+    "@infinity-agent/client-ui-chat": "workspace:*",
+    "@infinity-agent/client-ui-commands": "workspace:*",
+    "@infinity-agent/client-ui-context-menu": "workspace:*",
+    "@infinity-agent/client-ui-conversation": "workspace:*",
+    "@infinity-agent/client-ui-deliverables": "workspace:*",
+    "@infinity-agent/client-ui-input-trigger": "workspace:*",
+    "@infinity-agent/client-ui-jobs": "workspace:*",
+    "@infinity-agent/client-ui-layout": "workspace:*",
+    "@infinity-agent/client-ui-plan": "workspace:*",
+    "@infinity-agent/client-ui-primitives": "workspace:*",
+    "@infinity-agent/client-ui-reference": "workspace:*",
+    "@infinity-agent/client-ui-renderer": "workspace:*",
+    "@infinity-agent/client-ui-session": "workspace:*",
+    "@infinity-agent/client-ui-settings": "workspace:*",
+    "@infinity-agent/client-ui-sidebar": "workspace:*",
+    "@infinity-agent/client-ui-sidebar-right": "workspace:*",
+    "@infinity-agent/client-ui-slots": "workspace:*",
+    "@infinity-agent/client-ui-subagent": "workspace:*",
+    "@infinity-agent/client-ui-theme": "workspace:*",
+    "@infinity-agent/client-ui-tool": "workspace:*",
+    "@infinity-agent/client-ui-trajectory": "workspace:*",
+    "@infinity-agent/client-ui-user-questions": "workspace:*",
+    "@infinity-agent/client-ui-workflow-run": "workspace:*",
+    "@infinity-agent/client-ui-workspace": "workspace:*",
+    "@infinity-agent/client-web": "workspace:*",
+    "@infinity-agent/cua": "workspace:*",
+    "@infinity-agent/experimental-api-speech-to-text": "workspace:*",
+    "@infinity-agent/experimental-claude-code-mods": "workspace:*",
+    "@infinity-agent/experimental-client-ui-cot-translation": "workspace:*",
+    "@infinity-agent/fs": "workspace:*",
+    "@infinity-agent/fs-local": "workspace:*",
+    "@infinity-agent/fs-observation-policy": "workspace:*",
+    "@infinity-agent/fs-sandbox": "workspace:*",
+    "@infinity-agent/host-webserver": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/sandbox": "workspace:*",
+    "@infinity-agent/sandbox-policy": "workspace:*",
+    "@infinity-agent/scope": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/settings": "workspace:*",
+    "@infinity-agent/tool-executor-native": "workspace:*",
+    "@infinity-agent/tool-fs": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/typert-registry": "workspace:*",
+    "@infinity-agent/workspace": "workspace:*",
+    "@types/ws": "^8.18.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml",
+      "listedByDefault": false
+    },
+    "client": {
+      "inject": [
+        "@infinity-agent/api-remote-access",
+        "@infinity-agent/api-remotes",
+        "@infinity-agent/client-locale",
+        "@infinity-agent/client-ui-conversation",
+        "@infinity-agent/client-ui-primitives",
+        "@infinity-agent/client-ui-renderer",
+        "@infinity-agent/client-ui-session"
+      ],
+      "platform": "web"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

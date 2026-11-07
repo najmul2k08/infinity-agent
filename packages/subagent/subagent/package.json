@@ -1,0 +1,133 @@
+{
+  "name": "@infinity-agent/subagent",
+  "description": "Abstract subagent seam (ctx.subagents): named-provider registry for delegating to child agents",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/subagent/subagent"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client.d.ts",
+      "default": "./lib/types/client.js"
+    },
+    "./typert": {
+      "types": "./lib/typert.host.d.ts",
+      "default": "./lib/typert.host.js"
+    },
+    "./remote": {
+      "types": "./lib/typert.remote-client.d.ts",
+      "default": "./lib/typert.remote-client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.js",
+    "lib/types/**/*.d.ts",
+    "lib/typert.host.js",
+    "lib/typert.host.d.ts",
+    "lib/typert.remote-client.js",
+    "lib/typert.remote-client.d.ts"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@infinity-agent/brand": "workspace:*",
+    "@infinity-agent/chunked-list": "workspace:*",
+    "@infinity-agent/util-values": "workspace:*",
+    "@infinity-agent/schemastery": "workspace:~",
+    "zod": "4.4.3"
+  },
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-preset-registry": "workspace:*",
+    "@infinity-agent/attachment": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/sandbox": "workspace:*",
+    "@infinity-agent/sandbox-policy": "workspace:*",
+    "@infinity-agent/scope": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-persistence": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/session-query": "workspace:*",
+    "@infinity-agent/system-prompt": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/typert-protocol": "workspace:*",
+    "@infinity-agent/user-approval": "workspace:*",
+    "@infinity-agent/util-time": "workspace:*",
+    "@infinity-agent/permission-presets": "workspace:*",
+    "@infinity-agent/workspace": "workspace:*",
+    "@infinity-agent/working-directory": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@infinity-agent/agent-preset-registry": {
+      "optional": true
+    },
+    "@infinity-agent/permission-presets": {
+      "optional": true
+    },
+    "@infinity-agent/sandbox": {
+      "optional": true
+    },
+    "@infinity-agent/sandbox-policy": {
+      "optional": true
+    },
+    "@infinity-agent/session-persistence": {
+      "optional": true
+    },
+    "@infinity-agent/session-query": {
+      "optional": true
+    },
+    "@infinity-agent/workspace": {
+      "optional": true
+    },
+    "@infinity-agent/user-approval": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/agent": "workspace:*",
+    "@infinity-agent/agent-preset-registry": "workspace:*",
+    "@infinity-agent/attachment": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/sandbox": "workspace:*",
+    "@infinity-agent/sandbox-policy": "workspace:*",
+    "@infinity-agent/scope": "workspace:*",
+    "@infinity-agent/session": "workspace:*",
+    "@infinity-agent/session-persistence": "workspace:*",
+    "@infinity-agent/session-projection": "workspace:*",
+    "@infinity-agent/session-query": "workspace:*",
+    "@infinity-agent/system-prompt": "workspace:*",
+    "@infinity-agent/tool-testkit": "workspace:*",
+    "@infinity-agent/tools": "workspace:*",
+    "@infinity-agent/typert-protocol": "workspace:*",
+    "@infinity-agent/user-approval": "workspace:*",
+    "@infinity-agent/util-time": "workspace:*",
+    "@infinity-agent/permission-presets": "workspace:*",
+    "@infinity-agent/workspace": "workspace:*",
+    "@infinity-agent/cordis-plugin-include": "workspace:~",
+    "@infinity-agent/cordis-plugin-loader": "workspace:~",
+    "@infinity-agent/agent-loop": "workspace:*",
+    "@infinity-agent/agent-loop-testkit": "workspace:*",
+    "@infinity-agent/fs-sandbox": "workspace:*",
+    "@infinity-agent/tool-fs": "workspace:*",
+    "@infinity-agent/session-persistence-jsonl": "workspace:*",
+    "@infinity-agent/working-directory": "workspace:*"
+  }
+}

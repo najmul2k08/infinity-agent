@@ -1,0 +1,4 @@
+- id: sandbox
+  name: '@infinity-agent/sandbox-local'
+- id: skills
+  name: '@infinity-agent/skill'

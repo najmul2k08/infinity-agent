@@ -1,0 +1,44 @@
+{
+  "name": "@infinity-agent/fs",
+  "description": "Abstract filesystem capability seam (ctx.fs) for the Infinity agent — vocabulary types, the FileSystem service (text IO + optional version-guarded atomic mutations), and the fs/* policy event vocabulary",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/fs/fs"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/brand": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/sandbox": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@infinity-agent/brand": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/sandbox": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "dependencies": {
+    "@infinity-agent/fs-patch": "workspace:*"
+  }
+}

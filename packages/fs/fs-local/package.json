@@ -1,0 +1,46 @@
+{
+  "name": "@infinity-agent/fs-local",
+  "description": "Local-filesystem implementation of the Infinity agent filesystem seam (ctx.fs)",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/fs/fs-local"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@infinity-agent/fs": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~"
+  },
+  "dependencies": {
+    "chokidar": "5.0.0",
+    "koffi": "3.1.1",
+    "@infinity-agent/schemastery": "workspace:~",
+    "@infinity-agent/fs-patch": "workspace:*"
+  },
+  "devDependencies": {
+    "@infinity-agent/fs": "workspace:*",
+    "@infinity-agent/llm": "workspace:*",
+    "@infinity-agent/cordis": "workspace:~"
+  }
+}

@@ -1,0 +1,77 @@
+# The SDK application over dsh-base. Stdout belongs exclusively to JSON-RPC.
+
+- id: system-prompt
+  config:
+    personaPrefix: >-
+      You are a coding agent powered by the {{model}} model.
+
+- id: session-title-llm
+  disabled: true
+
+- insert:
+    - id: sdk-app-startup
+      name: '@infinity-agent/sdk-app'
+      config:
+        profile: sdk
+
+    - id: sdk-jsonrpc-server
+      name: '@infinity-agent/sdk-jsonrpc-server'
+      inject: [sdkAppStartup, loader]
+      config:
+        maxTokensAsSuccess: !!js "process.env.INFINITY_MAX_TOKENS_AS_SUCCESS === undefined ? true : JSON.parse(process.env.INFINITY_MAX_TOKENS_AS_SUCCESS)"
+
+- id: hmr
+  disabled: true
+
+- id: tool-plugin-manager
+  disabled: false
+
+# The packaged carrier supplies a default; INFINITY_PRIMARY_RUNTIME overrides it,
+# including an empty-string opt-out. Each row can be patched independently.
+- insert:
+    - id: workspace-dependencies
+      name: '@infinity-agent/tool-workspace-dependencies'
+      disabled: !!js "!(process.env.INFINITY_PRIMARY_RUNTIME ?? process.env.INFINITY_BUNDLED_PRIMARY_RUNTIME)"
+      config:
+        source: !!js "process.getBuiltinModule('node:path').resolve(process.env.INFINITY_PRIMARY_RUNTIME ?? process.env.INFINITY_BUNDLED_PRIMARY_RUNTIME ?? '')"
+
+    - id: skill-office
+      name: '@infinity-agent/skill-office'
+      disabled: !!js "!(process.env.INFINITY_PRIMARY_RUNTIME ?? process.env.INFINITY_BUNDLED_PRIMARY_RUNTIME) && !process.env.INFINITY_BUNDLED_OFFICE_CLI"
+      config:
+        assetRoot: !!js "process.env.INFINITY_BUNDLED_OFFICE_SKILLS ?? process.getBuiltinModule('node:path').resolve(process.env.INFINITY_PRIMARY_RUNTIME ?? process.env.INFINITY_BUNDLED_PRIMARY_RUNTIME ?? '', '..', 'office-skills')"
+        cli: !!js "process.env.INFINITY_BUNDLED_OFFICE_CLI === '' ? false : process.env.INFINITY_BUNDLED_OFFICE_CLI"
+        node: !!js "process.env.INFINITY_BUNDLED_OFFICE_NODE ?? process.getBuiltinModule('node:path').resolve(process.env.INFINITY_PRIMARY_RUNTIME ?? process.env.INFINITY_BUNDLED_PRIMARY_RUNTIME ?? '', 'dependencies', 'node', 'bin', process.platform === 'win32' ? 'node.exe' : 'node')"
+
+# Share native desktop tools and model context without starting a Web server.
+- insert:
+    - id: connection
+      name: '@infinity-agent/client-connection'
+
+    - id: file-upload
+      name: '@infinity-agent/client-file-upload'
+
+    - id: workspace
+      name: '@infinity-agent/workspace'
+
+    - id: schedule
+      name: '@infinity-agent/schedule'
+      inject: [sdkSessionActivation]
+
+    - id: time-context
+      name: '@infinity-agent/time-context'
+
+    - id: tool-schedule
+      name: '@infinity-agent/tool-schedule'
+
+    - id: tool-ask-user
+      name: '@infinity-agent/tool-ask-user'
+
+    - id: present
+      name: '@infinity-agent/tool-present'
+
+    - id: file-reference-local
+      name: '@infinity-agent/file-reference-local'
+
+    - id: deliverable-file-references
+      name: '@infinity-agent/deliverable-file-references'

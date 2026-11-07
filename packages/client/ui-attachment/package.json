@@ -1,0 +1,76 @@
+{
+  "name": "@infinity-agent/client-ui-attachment",
+  "description": "Dynamic attachment presentation plugin for conversation input, message-image, and trajectory image slots",
+  "version": "0.2.2-rc.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmul2k08/infinity-agent.git",
+    "directory": "packages/client/ui-attachment"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@infinity-agent/client-locale",
+        "@infinity-agent/client-ui-chat",
+        "@infinity-agent/client-ui-conversation",
+        "@infinity-agent/client-ui-renderer",
+        "@infinity-agent/client-ui-trajectory",
+        "@infinity-agent/client-ui-tool",
+        "@infinity-agent/client-ui-file-drag",
+        "@infinity-agent/client-ui-context-menu"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "bundle": "tsdown",
+    "watch": "tsdown --watch"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@infinity-agent/cordis": "workspace:~",
+    "@infinity-agent/client-locale": "workspace:*",
+    "@infinity-agent/client-ui-chat": "workspace:*",
+    "@infinity-agent/client-ui-conversation": "workspace:*",
+    "@infinity-agent/client-ui-trajectory": "workspace:*",
+    "@infinity-agent/client-ui-renderer": "workspace:*",
+    "@infinity-agent/client-ui-primitives": "workspace:*",
+    "@infinity-agent/client-ui-slots": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@infinity-agent/attachment": "workspace:*",
+    "@infinity-agent/client-ui-tool": "workspace:*",
+    "clsx": "^2.0.0",
+    "@infinity-agent/client-ui-file-drag": "workspace:*",
+    "@infinity-agent/util-file-drag": "workspace:*",
+    "@infinity-agent/client-ui-context-menu": "workspace:*"
+  },
+  "files": [
+    "locale/*.json",
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "peerDependencies": {
+    "@infinity-agent/cordis": "workspace:~"
+  }
+}

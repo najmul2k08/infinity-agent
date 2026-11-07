@@ -1,0 +1,29 @@
+# SDK-profile patch for the child runtime in the cwd-inheritance proof.
+
+- id: llm-deepseek
+  name: '@infinity-agent/llm-deepseek-api-key'
+  disabled: true
+
+- id: system-prompt
+  name: '@infinity-agent/system-prompt'
+  config:
+    personaPrefix: 'Echo where you run.'
+
+- id: agent-instructions
+  name: '@infinity-agent/agent-instructions'
+  disabled: true
+
+- id: skill-filesystem
+  name: '@infinity-agent/skill-filesystem'
+  config:
+    includeDefaultRoots: false
+
+- id: session-persistence-jsonl
+  name: '@infinity-agent/session-persistence-jsonl'
+  config:
+    root: !!js dshHomePath('sessions')
+    compression: none
+
+- insert:
+    - id: child-mock-llm
+      name: './child-mock-llm.ts'

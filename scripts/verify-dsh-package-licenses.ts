@@ -7,7 +7,7 @@ import { globSync, readFileSync } from 'node:fs'
 import { resolve, sep } from 'node:path'
 
 const ROOT = resolve(import.meta.dirname, '..')
-const INFINITY_PACKAGE_NAME = /^@infinity-agent\/(?!(?:cordis|cosmokit|schemastery|node-addon-system)(?:-|\/|$))
+const INFINITY_PACKAGE_NAME = /^@infinity-agent\/(?!(?:cordis|cosmokit|schemastery|node-addon-system)(?:-|\/|$))/
 
 /** Result of checking every DSH package reachable through the root workspace list. */
 export interface DshPackageLicenseReport {

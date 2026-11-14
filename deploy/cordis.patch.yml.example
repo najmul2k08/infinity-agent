@@ -1,0 +1,18 @@
+# Profile patch for a custom OpenAI-compatible gateway.
+# Copy the entry below into $INFINITY_HOME/profiles/web/cordis.patch.yml and
+# adjust ids, names, and capacities to the models the gateway serves.
+- id: llm-pi-ai
+  config:
+    providers:
+      relay:
+        displayName: Relay
+        apiKeyEnv: GATEWAY_API_KEY
+        api: openai-completions
+        baseURL: https://gateway.example/v1
+        models:
+          - id: example-large
+            name: Example Large
+            contextWindow: 1048576
+          - id: example-small
+            name: Example Small
+            contextWindow: 131072

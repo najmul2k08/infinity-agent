@@ -11,10 +11,15 @@ name: E2E (real DeepSeek API)
 # keyless). The job-level `if:` below skips the whole job for those untrusted
 # PRs. The Dependabot test keys on the PR AUTHOR (pull_request.user.login), not
 # github.actor (the run trigger) — a maintainer reopening a Dependabot PR would
-# make github.actor human while the PR is still keyless. When the job runs, the
-# secret is expected, so the preflight hard-fails if it's missing (a missing
-# secret would otherwise make the self-skipping suite report a false green). A
-# job skipped by a job-level `if:` reports as a SUCCESSFUL check, so this
+# make github.actor human while the PR is still keyless.
+#
+# A job-level `if:` cannot read `secrets`, so the `preflight` job probes
+# DEEPSEEK_API_KEY_EXTERNAL and the e2e job runs only when it is configured.
+# Without the secret the job reports a visible SKIP (the suite never runs, so
+# there is no false green); configuring the secret re-enables the real run with
+# no workflow change. When the job does run, the in-job preflight still
+# hard-fails on an empty value as a second guard.
+# A job skipped by a job-level `if:` reports as a SUCCESSFUL check, so this
 # workflow is safe to use as a required status check if desired.
 #
 # SECURITY — NEVER change this trigger to `pull_request_target`. `pull_request`
@@ -52,16 +57,42 @@ env:
   INFINITY_TELEMETRY_DISABLED: '1'
 
 jobs:
+  # Job-level `if:` cannot read `secrets`, so a job probes the secret and the
+  # real-API job keys off its output. A fork without a key then reports a
+  # visible skip instead of a nightly red run whose only cause is the absent
+  # secret; configuring DEEPSEEK_API_KEY_EXTERNAL re-enables the real run with
+  # no further change.
+  preflight:
+    name: preflight
+    runs-on: ubuntu-latest
+    outputs:
+      has_key: ${{ steps.probe.outputs.has_key }}
+    steps:
+      - id: probe
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY_EXTERNAL }}
+        run: |
+          set -euo pipefail
+          if [ -n "${DEEPSEEK_API_KEY:-}" ]; then
+            echo "has_key=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_key=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::DEEPSEEK_API_KEY_EXTERNAL is not configured; skipping the real-API e2e job."
+          fi
+
   e2e:
+    needs: preflight
     runs-on: >-
       ${{ vars.INFINITY_CI_FAILOVER_LINUX == 'blacksmith'
           && 'blacksmith-4vcpu-ubuntu-2404' || 'ubuntu-latest' }}
     name: e2e
-    # Run on every trusted event. Skip untrusted PRs (forks + Dependabot) where
-    # the secret is withheld — they would otherwise hard-fail the preflight.
+    # Run on trusted events with a configured key. Skip untrusted PRs (forks +
+    # Dependabot) where the secret is withheld, and skip entirely when the key
+    # is absent rather than failing every scheduled run.
     if: >-
-      github.event_name != 'pull_request'
-      || !(github.event.pull_request.head.repo.fork || github.event.pull_request.user.login == 'dependabot[bot]')
+      needs.preflight.outputs.has_key == 'true'
+      && (github.event_name != 'pull_request'
+      || !(github.event.pull_request.head.repo.fork || github.event.pull_request.user.login == 'dependabot[bot]'))
     # Profile e2e files can each own several complete infinity subprocess trees, so
     # four file workers preserve process/PTY headroom. Tests retain 120s/test
     # and retry 2; 45m still bounds retry storms against a slow API.
